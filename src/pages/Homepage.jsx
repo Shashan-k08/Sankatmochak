@@ -4,9 +4,11 @@ import '../App.css';
 import Navbar from '../components/Navbar';
 import Services from './Services';
 import Donation from './Donation';
+import about1 from '../img/about.jpg';
 import Registration from './Registration';
 import Footer from '../components/Footer';
 import Volunteer from './Volunteer';
+import Partners from './Partners';
 const Homepage = () => {
     return (
         <>
@@ -18,7 +20,7 @@ const Homepage = () => {
                     <div class="row g-5">
                         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style={{ height: "400px" }}>
                             <div class="position-relative h-100">
-                                {/* <img class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt="" style="object-fit: cover;"> */}
+                                <img class="img-fluid position-absolute w-100 h-100" src={about1} alt="" style={{objectFit: "cover"}}/>
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -55,6 +57,7 @@ const Homepage = () => {
             <Donation/>
             <Registration/>
             <Volunteer/>
+            <Partners/>
             <Footer/>
         </>
     )
