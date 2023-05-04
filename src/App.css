@@ -175,9 +175,9 @@
 
 /*** Hero Header ***/
 .hero-header {
-   background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7));
+  background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url('./img//background1.jpg');
   background-position: center center;
-  background-image: url(./img/background1.jpg);
+  /* background-image: url(./img/background1.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -272,8 +272,8 @@
 
 /*** Booking ***/
 .booking {
-   background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7));
-  background-position: center center;
+  background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(../src/img/booking.jpg);
+   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
