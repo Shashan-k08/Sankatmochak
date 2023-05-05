@@ -327,7 +327,16 @@
   background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
   z-index: 1;
 }
+.testimonial-box{
+display: flex;
+}
+.testimonial-image{
+height: 11rem;
+width: 11rem;
+}
+.testimonial-box1{
 
+}
 @media (min-width: 768px) {
   .testimonial-carousel::before,
   .testimonial-carousel::after {
@@ -445,3 +454,4 @@
   padding-right: 0;
   border-right: none;
 }
+

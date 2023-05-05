@@ -9,9 +9,12 @@ import Registration from './Registration';
 import Footer from '../components/Footer';
 import Volunteer from './Volunteer';
 import Partners from './Partners';
+import Testimonial from './Testimonial';
+// import Loader from '../components/Loader';
 const Homepage = () => {
     return (
         <>
+        {/* <Loader/> */}
             <Header />
             <Navbar />
 
@@ -58,6 +61,7 @@ const Homepage = () => {
             <Registration />
             <Volunteer />
             <Partners />
+            <Testimonial/>
             <Footer />
         </>
     )

@@ -21,19 +21,19 @@ const Registration = () => {
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <input type="text" className="form-control bg-transparent" id="name" placeholder="Your Name" />
-                                                <label for="name">Your Name</label>
+                                                <label htmlFor="name">Your Name</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <input type="email" className="form-control bg-transparent" id="email" placeholder="Your Email" />
-                                                <label for="email">Your Email</label>
+                                                <label htmlFor="email">Your Email</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating date" id="date3" data-target-input="nearest">
                                                 <input type="text" className="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                                <label for="datetime">Age</label>
+                                                <label htmlFor="datetime">Age</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
@@ -43,13 +43,13 @@ const Registration = () => {
                                                     <option value="2">Pan Number</option>
                                                     <option value="3">Voter's Id Number</option>
                                                 </select>
-                                                <label for="select1">Authentication</label>
+                                                <label htmlFor="select1">Authentication</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
                                                 <textarea className="form-control bg-transparent" placeholder="Special Request" id="message" style={{ height: "100px" }}></textarea>
-                                                <label for="message"></label>
+                                                <label htmlFor="message"></label>
                                             </div>
                                         </div>
                                         <div className="col-12">
