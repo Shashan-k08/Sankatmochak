@@ -11,6 +11,7 @@ import Volunteer from './Volunteer';
 import Partners from './Partners';
 import Testimonial from './Testimonial';
 import Login from '../components/Login';
+import Heroheader from '../components/Heroheader';
 // import Loader from '../components/Loader';
 const Homepage = () => {
     return (
@@ -18,6 +19,7 @@ const Homepage = () => {
         {/* <Loader/> */}
             <Header />
             <Navbar />
+            <Heroheader/>
             {/* <Login/> */}
 
             <div className="container-xxl py-5">

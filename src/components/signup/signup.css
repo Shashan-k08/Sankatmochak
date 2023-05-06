@@ -1,14 +1,18 @@
 
+  .sign-wrap{
+   
+  }
   div.bx-1{
     display: flex;
-    height: 100vh;
-    background-image: radial-gradient(circle, #d5f5bf, #dcf6c3, #e2f7c7, #e8f8cb, #edf9d0, #ecface, #ecfacb, #ebfbc9, #e4fbbf, #dcfbb6, #d3fbae, #c9fba6);
-    align-items: center;
+    height: 82vh;
+    margin-top: 5rem;
+   align-items: center;
   }
   .signup-box {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   width: 40vw;
     display: flex;
+  
     flex-direction: column;
     align-items: center;
     margin: auto;
@@ -119,6 +123,10 @@ opacity: .5;
   @media(max-width:600px) {
     .signup-box{
         width: 90vw;
+    }
+
+    div.bx-1{
+        margin-top: -1rem;
     }
   }
   

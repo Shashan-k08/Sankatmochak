@@ -1,8 +1,13 @@
 import React from 'react'
+import Footer from '../Footer';
+import Header from '../Header';
+import Navbar from '../Navbar';
 import './signup.css';
 const Signup = () => {
-    return (
-        <div className='bx-1'>
+    return (<div className='sign-wrap'>
+             <Header/>
+             <Navbar/>
+            <div className='bx-1'>
             <div class="signup-box">
                 <h1>Join Us</h1>
 
@@ -63,7 +68,8 @@ const Signup = () => {
             </div>
 
         </div>
-
+        <Footer/>
+        </div>
     )
 }
 

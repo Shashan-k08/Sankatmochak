@@ -10,12 +10,18 @@ const Navbar = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  
+const handleOn=()=>{
+  var dis = document.getElementById('hiide').style;
+  if(dis.display==="none")
+  dis.display="block";
+  else
+  dis.display="none";
+}
 
   useEffect(() => {
 
-
-    window.addEventListener('scroll', function () {
+   window.addEventListener('scroll', function () {
       var elements = document.getElementsByClassName("navbar");
       var i
 
@@ -87,10 +93,10 @@ const Navbar = () => {
             <h1 className="text-primary m-0">Sankatmochak</h1>
 
           </a>
-          <button className="navbar-toggler show" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <button className="navbar-toggler "  onClick={handleOn} type="button" >
             <span className="fa fa-bars"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarCollapse" >
+          <div className=" navbar-collapse show" id="hiide" >
             <div className="navbar-nav ms-auto py-0">
               <a href="/" className="nav-item nav-link active">Home</a>
               <a href="/" className="nav-item nav-link">About</a>
@@ -112,17 +118,7 @@ const Navbar = () => {
           </div>
         </nav>
 
-        <div className="container-fluid bg-primary py-5 mb-5 hero-header">
-          <div className="container py-5">
-            <div className="row justify-content-center py-5">
-              <div className="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                <h1 className="display-3 text-white mb-3 animated slideInDown">Saves lifes With Us</h1>
-                <p className="fs-4 text-white mb-4 animated slideInDown">"Preparing for the worst, managing the present, and adapting for the future". <br />Sankatmochak</p>
-
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </>
   )
