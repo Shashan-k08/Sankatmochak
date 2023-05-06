@@ -8,7 +8,7 @@ const Signup = () => {
 
                 <form>
                     <label>Name</label>
-                    <input type="text" placeholder="Enter your name" />
+                    <input type="text" placeholder="Enter your name" name='name' />
                     <label>Select the state you belong</label>
                     <select name="state" id="state" className='stateinput'>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -48,14 +48,14 @@ const Signup = () => {
                         <option value="Uttarakhand">Uttarakhand</option>
                         <option value="West Bengal">West Bengal</option>
                     </select>
-                    
+
                     <label>Email</label>
-                    <input type="email" placeholder="" />
+                    <input type="email" placeholder="Enter your email" required min={12} name="email" />
                     <label>Password</label>
-                    <input type="password" placeholder="" />
+                    <input type="password" placeholder="minimum 8 characters" required min={8} name="pass" />
                     <label>Confirm Password</label>
-                    <input type="password" placeholder="" />
-                    
+                    <input type="password" placeholder="comfirm password" required min={8} name="cpass" />
+
                 </form>
                 <button>Submit</button>
                 <p class="para-2"> Already have an account? </p>

@@ -2,19 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../login.css'
-import {
-  MDBRow,
-  MDBCol,
-  MDBInput,
-  MDBCheckbox,
-  MDBBtn,
-  MDBIcon,
-  MDBTabs,
-  MDBTabsItem,
-  MDBTabsLink,
-  MDBTabsContent,
-  MDBTabsPane
-} from 'mdb-react-ui-kit';
+
 
 const Navbar = () => {
 
@@ -47,15 +35,6 @@ const Navbar = () => {
     });
   }
     , [])
-
-  // Attach a scroll event listener to the window object
-
-  // const navtoggle=()=>{
-  //  document.getElementsByClassName('collapse').style.display="block"
-
-  // }
-
-
   return (
     <>
       {/* <Button variant="primary" onClick={handleShow}>
@@ -72,18 +51,19 @@ const Navbar = () => {
             <div id="login-form-wrap">
               <h2>Login</h2>
               <form className='form2' id="login-form">
+               
                 <p>
-                  <input type="text" id="username" name="username" placeholder="Username" required/><i class="validation" ><span></span><span></span></i>
+                  <input type="email" id="email" name="email" placeholder=" Enter your Email" required/><i class="validation" ><span></span><span></span></i>
                 </p>
                 <p>
-                  <input type="email" id="email" name="email" placeholder="Email Address" required/><i class="validation" ><span></span><span></span></i>
+                  <input type="password" id="username" name="username" placeholder="Enter your password" required/><i class="validation" ><span></span><span></span></i>
                 </p>
                 <p>
                   <input type="submit" id="login" value="Login" />
                 </p>
               </form>
               <div id="create-account-wrap">
-                <p> Not a member? <a href="/">Create Account</a></p>
+                <p> Not a member? <a href="/signup">Create Account</a></p>
 
               </div>
             </div>
