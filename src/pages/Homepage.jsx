@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import Volunteer from './Volunteer';
 import Partners from './Partners';
 import Testimonial from './Testimonial';
+import Login from '../components/Login';
 // import Loader from '../components/Loader';
 const Homepage = () => {
     return (
@@ -17,6 +18,7 @@ const Homepage = () => {
         {/* <Loader/> */}
             <Header />
             <Navbar />
+            {/* <Login/> */}
 
             <div className="container-xxl py-5">
                 <div className="container">

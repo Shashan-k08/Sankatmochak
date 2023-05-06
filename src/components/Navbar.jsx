@@ -1,7 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import '../login.css'
+import {
+  MDBRow,
+  MDBCol,
+  MDBInput,
+  MDBCheckbox,
+  MDBBtn,
+  MDBIcon,
+  MDBTabs,
+  MDBTabsItem,
+  MDBTabsLink,
+  MDBTabsContent,
+  MDBTabsPane
+} from 'mdb-react-ui-kit';
 
 const Navbar = () => {
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
 
   useEffect(() => {
@@ -10,19 +30,19 @@ const Navbar = () => {
     window.addEventListener('scroll', function () {
       var elements = document.getElementsByClassName("navbar");
       var i
-  
+
       if (window.pageYOffset > 45) {
 
         for (i = 0; i < elements.length; i++) {
           elements[i].classList.add('sticky-top', 'shadow-sm');
         }
-       
+
       } else {
 
         for (i = 0; i < elements.length; i++) {
           elements[i].classList.remove('sticky-top', 'shadow-sm');
         }
-      
+
       }
     });
   }
@@ -35,15 +55,59 @@ const Navbar = () => {
 
   // }
 
+
   return (
     <>
+      {/* <Button variant="primary" onClick={handleShow}>
+        Launch demo modal
+      </Button> */}
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div>
+
+            <div id="login-form-wrap">
+              <h2>Login</h2>
+              <form className='form2' id="login-form">
+                <p>
+                  <input type="text" id="username" name="username" placeholder="Username" required/><i class="validation" ><span></span><span></span></i>
+                </p>
+                <p>
+                  <input type="email" id="email" name="email" placeholder="Email Address" required/><i class="validation" ><span></span><span></span></i>
+                </p>
+                <p>
+                  <input type="submit" id="login" value="Login" />
+                </p>
+              </form>
+              <div id="create-account-wrap">
+                <p> Not a member? <a href="/">Create Account</a></p>
+
+              </div>
+            </div>
+          </div>
+
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
       <div className="container-fluid position-relative p-0">
         <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" id='er'>
           <a href="/" className="navbar-brand p-0">
             <h1 className="text-primary m-0">Sankatmochak</h1>
-            {/* <!-- <img src="img/logo.png" alt="Logo"> --> */}
+
           </a>
-          <button  className="navbar-toggler show" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <button className="navbar-toggler show" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span className="fa fa-bars"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse" >
@@ -64,7 +128,7 @@ const Navbar = () => {
               </div>
               <a href="/" className="nav-item nav-link">Contact</a>
             </div>
-            <a href="/" className="btn btn-primary rounded-pill py-2 px-4">Register</a>
+            <div onClick={handleShow} className="btn btn-primary rounded-pill py-2 px-4">Register</div>
           </div>
         </nav>
 
