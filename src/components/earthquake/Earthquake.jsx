@@ -59,7 +59,7 @@ function Earthquake() {
       </Row>
      
     </Container>
-    <h6>Wants to know more?</h6>
+    <a  href="https://sankatmochak-earthquake-monitoring.netlify.app/"className='eq-txt'>Wants to know more?</a>
             <Footer/>
         </div>
     );

@@ -3,8 +3,22 @@
 .eq{
     margin-top: 8rem;
 }
+.earth-quake-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.eq-txt{
+    text-decoration: underline;
+    font-weight: 400;
+    color: #666a68;
+}
+.eq-txt:hover{
+    color: #1b1d1c;
+}
 
-@media (max-width:500px) {
+@media (max-width:800px) {
     .eq{
     margin-top: 1rem;
     }
