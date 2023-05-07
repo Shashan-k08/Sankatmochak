@@ -1,0 +1,49 @@
+.wk-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.program-box{
+    margin-top: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.txt3{
+font-family: initial;
+}
+.counter{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+    padding: 2em;
+    /* align-items: center; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.counter span{
+    padding-right: 1rem;
+} 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  tr:nth-child(odd) {
+    background-color: rgba(247, 201, 0, 0.8);
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .training-program-box{
+margin: 3rem;
+  }

@@ -13,6 +13,7 @@ import Chat from './pages/Chat/Chat';
 import Chatbox from './pages/Chat/Chatbox';
 import Earthmore from './components/earthquake/Earthmore';
 import Earthquake from './components/earthquake/Earthquake';
+import Workshop from './components/workshop/Workshop';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path='/signup' element={<SignUp />} />
           <Route exact path='/chat' element={<Chat />} />
           <Route exact path='/chatbox' element={<Chatbox/>} />
+          <Route exact path='/members/workshop' element={<Workshop/>} />
           <Route exact path='/info/earthquake' element={<Earthquake/>} />
           <Route exact path='/info/earthquake/earthmore' element={<Earthmore/>} />
         </Routes>
