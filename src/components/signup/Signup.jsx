@@ -2,8 +2,30 @@ import React from 'react'
 import Footer from '../Footer';
 import Header from '../Header';
 import Navbar from '../Navbar';
+import { useState } from 'react';
 import './signup.css';
 const Signup = () => {
+
+    const [credentials, setcredentials] = useState({ name: "", email:"",password:"",state:"" })
+    const host = "http://localhost:3008/api/auth/signUp";
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+         const { name, email,password,state } = credentials;
+        const response = await fetch(host, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({  name, email,password,state})
+
+        })
+        const json = await response.json();
+        console.log(json);
+        console.log(credentials);
+    }
+    const onchange = (e) => {
+      setcredentials({ ...credentials, [e.target.name]: e.target.value })
+  }
     return (<div className='sign-wrap'>
              <Header/>
              <Navbar/>
@@ -13,9 +35,9 @@ const Signup = () => {
 
                 <form>
                     <label>Name</label>
-                    <input type="text" placeholder="Enter your name" name='name' />
+                    <input type="text" onChange={onchange} placeholder="Enter your name" name='name' />
                     <label>Select the state you belong</label>
-                    <select name="state" id="state" className='stateinput'>
+                    <select name="state" onChange={onchange} id="state" className='stateinput'>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -55,14 +77,14 @@ const Signup = () => {
                     </select>
 
                     <label>Email</label>
-                    <input type="email" placeholder="Enter your email" required min={12} name="email" />
+                    <input type="email" onChange={onchange} placeholder="Enter your email" required min={12} name="email" />
                     <label>Password</label>
-                    <input type="password" placeholder="minimum 8 characters" required min={8} name="pass" />
+                    <input type="password" onChange={onchange} placeholder="minimum 8 characters" required min={8} name="password" />
                     <label>Confirm Password</label>
-                    <input type="password" placeholder="comfirm password" required min={8} name="cpass" />
+                    <input type="password"  placeholder="comfirm password" required min={8} name="cpass" />
 
                 </form>
-                <button>Submit</button>
+                <button onClick={handleSubmit}>Submit</button>
                 <p class="para-2"> Already have an account? </p>
                 <a href="/">Login here</a>
             </div>
