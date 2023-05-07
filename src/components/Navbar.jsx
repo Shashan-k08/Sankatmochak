@@ -10,6 +10,9 @@ const Navbar = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+
+ 
   
 const handleOn=()=>{
   var dis = document.getElementById('hiide').style;
