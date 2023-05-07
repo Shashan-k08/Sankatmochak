@@ -1,0 +1,11 @@
+
+
+.eq{
+    margin-top: 8rem;
+}
+
+@media (max-width:500px) {
+    .eq{
+    margin-top: 1rem;
+    }
+}
