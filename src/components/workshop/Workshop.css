@@ -47,3 +47,28 @@ table {
   .training-program-box{
 margin: 3rem;
   }
+  .ticket-box{
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    flex-direction: column;
+    margin: 3rem 12rem;
+    padding: 3rem;
+  }
+.tx4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  
+}
+div.ticket-box button{
+    background-color: #a8e364;
+    padding: .3rem;
+    border-radius: 0.4rem;
+}
+  @media (max-width:900px) {
+    .tx4{
+        flex-direction: column;
+    }
+  }
