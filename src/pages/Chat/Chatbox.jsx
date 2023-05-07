@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Chatbox = () => {
+    
   return (
     <div>
          <div class="chat-container">

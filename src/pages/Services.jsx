@@ -1,6 +1,10 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom';
 const Services = () => {
+    let navigate = useNavigate();
+    const movechat = () => {
+        navigate('/chat')
+    }
     return (
         <>
             <div className="container-xxl py-5">
@@ -48,7 +52,7 @@ const Services = () => {
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div className="service-item rounded pt-3">
-                                <div className="p-4">
+                                <div className="p-4" onClick={movechat}>
                                     <i className="fa fa-3x fa-globe text-primary mb-4"></i>
                                     <h5>Interaction area</h5>
                                     <p>Submit Information about diaster or ask any thing.</p>

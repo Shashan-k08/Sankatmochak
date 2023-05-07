@@ -11,6 +11,8 @@ import Login from './components/Login';
 import SignUp from './components/signup/Signup.jsx';
 import Chat from './pages/Chat/Chat';
 import Chatbox from './pages/Chat/Chatbox';
+import Earthmore from './components/earthquake/Earthmore';
+import Earthquake from './components/earthquake/Earthquake';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route exact path='/signup' element={<SignUp />} />
           <Route exact path='/chat' element={<Chat />} />
           <Route exact path='/chatbox' element={<Chatbox/>} />
+          <Route exact path='/info/earthquake' element={<Earthquake/>} />
+          <Route exact path='/info/earthquake/earthmore' element={<Earthmore/>} />
         </Routes>
       </Router>
     </>

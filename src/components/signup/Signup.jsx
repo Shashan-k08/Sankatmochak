@@ -4,8 +4,10 @@ import Header from '../Header';
 import Navbar from '../Navbar';
 import { useState } from 'react';
 import './signup.css';
-const Signup = () => {
 
+import { useNavigate } from 'react-router-dom';
+const Signup = () => {
+    let navigate = useNavigate();
     const [credentials, setcredentials] = useState({ name: "", email:"",password:"",state:"" })
     const host = "http://localhost:3008/api/auth/signUp";
     const handleSubmit = async (e) => {
@@ -22,6 +24,7 @@ const Signup = () => {
         const json = await response.json();
         console.log(json);
         console.log(credentials);
+        navigate("/chatbox")
     }
     const onchange = (e) => {
       setcredentials({ ...credentials, [e.target.name]: e.target.value })
