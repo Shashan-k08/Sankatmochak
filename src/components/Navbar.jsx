@@ -1,18 +1,50 @@
 import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import '../login.css'
 
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const navigate = useNavigate();
+  const host ="http://localhost:3008";
+  const [credentials, setcredentials] = useState({ email: "", password: "" })
 
   const [show, setShow] = useState(false);
-
+  const [showlog, setShowlog] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleLogin = async(e)=>{
+    e.preventDefault();
+    const response = await fetch(`${host}/api/auth/signIn`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({email:credentials.email,password:credentials.password})
+    });
+    const json = await response.json();
+    console.log(json)
+    if(json.success)
+    {   props.showalert("Logged-in Successfully", "success")
+        // save the verification token and redirect
+        setShowlog(true);
+        localStorage.setItem('token',json.verificationtoken);
+        handleClose();
+        
+        navigate("/");
+        props.showalert("Logged-in Successfully", "success")
 
+    }
+    else
+    {
+        props.showalert("Invalid details","danger")
+    }
+  }
 
- 
+  const onChange = (e) => {
+    setcredentials({ ...credentials, [e.target.name]: e.target.value })
+}
   
 const handleOn=()=>{
   var dis = document.getElementById('hiide').style;
@@ -22,7 +54,18 @@ const handleOn=()=>{
   dis.display="none";
 }
 
+const handlelogout=()=>{
+   localStorage.removeItem('token');
+   setShowlog(false)
+  
+   console.log(localStorage.getItem('token'))
+}
+
   useEffect(() => {
+    const abd = localStorage.getItem('token');
+    if(abd==="true")
+    setShowlog(false)
+    console.log(localStorage.getItem('token'))
 
    window.addEventListener('scroll', function () {
       var elements = document.getElementsByClassName("navbar");
@@ -59,13 +102,13 @@ const handleOn=()=>{
 
             <div id="login-form-wrap">
               <h2>Login</h2>
-              <form className='form2' id="login-form">
+              <form className='form2' id="login-form" onSubmit={handleLogin}>
                
                 <p>
-                  <input type="email" id="email" name="email" placeholder=" Enter your Email" required/><i class="validation" ><span></span><span></span></i>
+                  <input type="email"  name="email" onChange={onChange} value={credentials.email} placeholder=" Enter your Email" required/><i class="validation" ><span></span><span></span></i>
                 </p>
                 <p>
-                  <input type="password" id="username" name="username" placeholder="Enter your password" required/><i class="validation" ><span></span><span></span></i>
+                  <input type="password" id="username" onChange={onChange} name="password" value={credentials.password} placeholder="Enter your password" required/><i class="validation" ><span></span><span></span></i>
                 </p>
                 <p>
                   <input type="submit" id="login" value="Login" />
@@ -104,7 +147,7 @@ const handleOn=()=>{
               <a href="/" className="nav-item nav-link active">Home</a>
               <a href="/" className="nav-item nav-link">About</a>
               <a href="/" className="nav-item nav-link">Services</a>
-              <a href="http://127.0.0.1:5501/index.html" className="nav-item nav-link">Packages</a>
+              <a href="http://127.0.0.1" className="nav-item nav-link">Testimonials</a>
               <div className="nav-item dropdown">
                 <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Disaster-Type</a>
                 <div className="dropdown-menu m-0">
@@ -118,8 +161,9 @@ const handleOn=()=>{
               </div>
               <a href="/" className="nav-item nav-link">Contact</a>
             </div>
-            <div onClick={handleShow} className="btn btn-primary rounded-pill py-2 px-4">Register</div>
-          </div>
+           {!showlog ? (<div onClick={handleShow} className="btn btn-primary rounded-pill py-2 px-4">Register</div>):(<>
+        <div onClick={handlelogout} className="btn btn-primary rounded-pill py-2 px-4">Logout</div> </>)}
+        </div>
         </nav>
 
        

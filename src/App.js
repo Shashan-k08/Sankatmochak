@@ -20,6 +20,8 @@ import Workshop from './components/workshop/Workshop';
 import VolunteerInfo from './components/volunteer/VolunteerInfo';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
+import Services from './pages/Services';
+import Testimonial from './pages/Testimonial';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -37,12 +39,14 @@ function App() {
       <Router>
       <Alert alert={alert} />
       <Header/>
-      <Navbar/>
+      <Navbar  showalert={showalert} />
         <Routes>
           <Route path='/' element={<Homepage showalert={showalert} />} />
           <Route exact path='/login' element={<Login showalert={showalert} />} />
           <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
           <Route exact path='/chat' element={<Chat showalert={showalert} />} />
+          <Route exact path='/services' element={<Services showalert={showalert} />} />
+          <Route exact path='/testimonials' element={<Testimonial showalert={showalert} />} />
           <Route exact path='/chatbox' element={<Chatbox showalert={showalert}/>} />
           <Route exact path='/members/workshop' element={<Workshop showalert={showalert}/>} />
           <Route exact path='/info/earthquake' element={<Earthquake showalert={showalert}/>} />
