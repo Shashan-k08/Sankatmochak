@@ -6,7 +6,7 @@ import { useState } from 'react';
 import './signup.css';
 
 import { useNavigate } from 'react-router-dom';
-const Signup = () => {
+const Signup = (props) => {
     let navigate = useNavigate();
     const [credentials, setcredentials] = useState({ name: "", email:"",password:"",state:"" })
     const host = "http://localhost:3008/api/auth/signUp";
@@ -19,19 +19,23 @@ const Signup = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({  name, email,password,state})
-
         })
         const json = await response.json();
-        console.log(json);
-        console.log(credentials);
-        navigate("/chatbox")
+
+        if (json.success) {
+            localStorage.setItem('token', json.verificationtoken);
+            navigate("/");
+            props.showalert("Account created Successfully", "success")
+        }
+        else {
+            props.showalert("Invalid credentials", "danger")
+        }
     }
     const onchange = (e) => {
       setcredentials({ ...credentials, [e.target.name]: e.target.value })
   }
     return (<div className='sign-wrap'>
-             <Header/>
-             <Navbar/>
+            
             <div className='bx-1'>
             <div class="signup-box">
                 <h1>Join Us</h1>

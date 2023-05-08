@@ -38,10 +38,8 @@ const Workshop = () => {
     return (
 
         <div className='wk-box'>
-            <Header />
-            <Navbar />
             <div className="program-box">
-                <h4 className='txt3'>  <Marquee loop="infinite" behavior="scroll" direction="left" scrollamount="1"><em>Training Camp and Knowledge Workshop by  Sankatmochak And Government of India</em> in your area </Marquee></h4>
+                <h4 className='txt3'>  <Marquee loop="infinite"  behavior="scroll" direction="left" scrollamount="1"><em>Training Camp and Knowledge Workshop by  Sankatmochak And Government of India</em> in your area </Marquee></h4>
                 <div className="tx4">
 
 

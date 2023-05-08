@@ -79,8 +79,7 @@ const Info = () => {
 
     return (
         <div class="container4" >
-            <Header />
-            <Navbar />
+           
             <div className="container5">
                 <div class="info-heading">
                     <h2>Update News Alert and Information of your area</h2>

@@ -16,11 +16,9 @@ import Heroheader from '../components/Heroheader';
 const Homepage = () => {
     return (
         <>
-        {/* <Loader/> */}
-            <Header />
-            <Navbar />
+        
             <Heroheader/>
-            {/* <Login/> */}
+            
 
             <div className="container-xxl py-5">
                 <div className="container">

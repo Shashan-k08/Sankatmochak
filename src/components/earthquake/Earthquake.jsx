@@ -38,8 +38,6 @@ function Earthquake() {
 
     return (
         <div className='earth-quake-box'>
-            <Header/>
-            <Navbar/>
             <Container className="eq">
       <h1 className="text-center my-5"> Recent Earthquake Analytics of India</h1>
       <Row>

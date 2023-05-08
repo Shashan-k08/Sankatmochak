@@ -6,8 +6,8 @@ import Navbar from './Navbar'
 const Login = () => {
   return (
    <>
-   <Header/>
-   {/* <Navbar/> */}
+   
+
   <div class="container1">
         <div class="signin-signup">
             <form action="" class="sign-in-form">
