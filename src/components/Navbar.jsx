@@ -106,13 +106,14 @@ const handleOn=()=>{
               <a href="/" className="nav-item nav-link">Services</a>
               <a href="http://127.0.0.1:5501/index.html" className="nav-item nav-link">Packages</a>
               <div className="nav-item dropdown">
-                <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Disaster-Type</a>
                 <div className="dropdown-menu m-0">
-                  <a href="/" className="dropdown-item">Destination</a>
-                  <a href="/" className="dropdown-item">Booking</a>
-                  <a href="/" className="dropdown-item">Travel Guides</a>
-                  <a href="/" className="dropdown-item">Testimonial</a>
-                  <a href="/" className="dropdown-item">404 Page</a>
+                  <a href="http://localhost:3000/info/earthquake
+                  " className="dropdown-item">Earthquake</a>
+                  <a href="/" className="dropdown-item">Tsunami</a>
+                  <a href="/" className="dropdown-item">Corona</a>
+                  <a href="/" className="dropdown-item">Communal-War</a>
+                  <a href="/" className="dropdown-item">Landsliding</a>
                 </div>
               </div>
               <a href="/" className="nav-item nav-link">Contact</a>

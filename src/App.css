@@ -480,3 +480,6 @@ width: 11rem;
   justify-content: center;
   align-items: center;
 }
+.pointer{
+  cursor: pointer;
+}

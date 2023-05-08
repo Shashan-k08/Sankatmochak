@@ -41,4 +41,41 @@
   .record-button:hover {
     background-color: #3e8e41;
   }
+
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-header {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    color: #555;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    min-width: 160px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .dropdown-item {
+    color: #555;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f2f2f2;
+  }
+  
   
