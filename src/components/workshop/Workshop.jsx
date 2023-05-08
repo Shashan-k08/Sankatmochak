@@ -369,7 +369,7 @@ const Workshop = () => {
 
                     </table>
                 </div>
-                <Footer />
+               
 
             </div >
         </div>

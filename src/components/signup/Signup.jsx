@@ -97,7 +97,7 @@ const Signup = (props) => {
             </div>
 
         </div>
-        <Footer/>
+        
         </div>
     )
 }

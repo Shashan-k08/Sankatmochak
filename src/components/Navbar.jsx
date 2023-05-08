@@ -57,14 +57,14 @@ const handleOn=()=>{
 const handlelogout=()=>{
    localStorage.removeItem('token');
    setShowlog(false)
-  
-   console.log(localStorage.getItem('token'))
+   props.showalert("Logged-Out-Successfully", "success")
+   
 }
 
   useEffect(() => {
     const abd = localStorage.getItem('token');
-    if(abd==="true")
-    setShowlog(false)
+    if(abd)
+    setShowlog(true)
     console.log(localStorage.getItem('token'))
 
    window.addEventListener('scroll', function () {
@@ -111,7 +111,7 @@ const handlelogout=()=>{
                   <input type="password" id="username" onChange={onChange} name="password" value={credentials.password} placeholder="Enter your password" required/><i class="validation" ><span></span><span></span></i>
                 </p>
                 <p>
-                  <input type="submit" id="login" value="Login" />
+                  <input type="submit" className='login-but'  value="Login" />
                 </p>
               </form>
               <div id="create-account-wrap">
@@ -146,8 +146,8 @@ const handlelogout=()=>{
             <div className="navbar-nav ms-auto py-0">
               <a href="/" className="nav-item nav-link active">Home</a>
               <a href="/" className="nav-item nav-link">About</a>
-              <a href="/" className="nav-item nav-link">Services</a>
-              <a href="http://127.0.0.1" className="nav-item nav-link">Testimonials</a>
+              <a href="http://localhost:3000/services" className="nav-item nav-link">Services</a>
+              <a href="http://localhost:3000/testimonials" className="nav-item nav-link">Testimonials</a>
               <div className="nav-item dropdown">
                 <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Disaster-Type</a>
                 <div className="dropdown-menu m-0">
@@ -161,7 +161,7 @@ const handlelogout=()=>{
               </div>
               <a href="/" className="nav-item nav-link">Contact</a>
             </div>
-           {!showlog ? (<div onClick={handleShow} className="btn btn-primary rounded-pill py-2 px-4">Register</div>):(<>
+           {!showlog ? (<div onClick={handleShow} className="btn btn-primary rounded-pill py-2 px-4">Sign-Up</div>):(<>
         <div onClick={handlelogout} className="btn btn-primary rounded-pill py-2 px-4">Logout</div> </>)}
         </div>
         </nav>

@@ -483,3 +483,7 @@ width: 11rem;
 .pointer{
   cursor: pointer;
 }
+.login-but{
+  padding: 1rem;
+  height: 3rem;
+}

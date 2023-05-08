@@ -22,6 +22,7 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Services from './pages/Services';
 import Testimonial from './pages/Testimonial';
+import Footer from './components/Footer';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -54,6 +55,7 @@ function App() {
           <Route exact path='/info/volunteer' element={<VolunteerInfo showalert={showalert}/>} />
           <Route exact path='/info/earthquake/earthmore' element={<Earthmore showalert={showalert}/>} />
         </Routes>
+        <Footer/>
       </Router>
     </>
   );

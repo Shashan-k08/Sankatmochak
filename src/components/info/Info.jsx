@@ -132,7 +132,7 @@ const Info = () => {
                 </form>
             </div>
 
-            <Footer />
+         
         </div >
     )
 }

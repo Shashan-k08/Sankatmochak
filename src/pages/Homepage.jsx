@@ -64,7 +64,7 @@ const Homepage = () => {
             <Volunteer />
             <Partners />
             <Testimonial/>
-            <Footer />
+           
         </>
     )
 }
