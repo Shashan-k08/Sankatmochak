@@ -12,13 +12,14 @@ import Partners from './Partners';
 import Testimonial from './Testimonial';
 import Login from '../components/Login';
 import Heroheader from '../components/Heroheader';
+import Sos from '../components/sos-box/Sos';
 // import Loader from '../components/Loader';
 const Homepage = () => {
     return (
         <>
         
             <Heroheader/>
-            
+            <Sos/>
 
             <div className="container-xxl py-5">
                 <div className="container">
