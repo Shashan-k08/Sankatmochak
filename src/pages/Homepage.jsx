@@ -14,12 +14,12 @@ import Login from '../components/Login';
 import Heroheader from '../components/Heroheader';
 import Sos from '../components/sos-box/Sos';
 // import Loader from '../components/Loader';
-const Homepage = () => {
+const Homepage = (props) => {
     return (
         <>
            
             <Heroheader/>
-            <Sos/>
+            <Sos showalert={props.showalert}/>
 
             <div className="container-xxl py-5">
                 <div className="container">

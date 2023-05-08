@@ -13,7 +13,7 @@
 }
 
 .sos-m button:hover {
-    background-color: #43f343;
+    background-color: #31ef31;
 }
 
 .sos-s button {
@@ -32,13 +32,18 @@
     }
 }
 
+@keyframes glow2 {
+    0% {
+        box-shadow: 0 0 0 0  #21d221;
+    }
+
+    50% {
+        box-shadow: 0 0 30px 0  #21d221;
+    }
+}
+
 .btn-glow {
     background: crimson;
-    color: #fff;
-    font-size: 1.6em;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 16px 34px;
     box-shadow: 0 0 0 0 crimson;
     animation: glow 1.4s linear infinite;
 }
@@ -46,12 +51,10 @@
 .btn-glow2 {
     background: #21d221;
     color: #fff;
-    font-size: 1.6em;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 16px 34px;
+   
+   
     box-shadow: 0 0 0 0 #21d221;
-    animation: glow 1.4s linear infinite;
+    animation: glow2 1.4s linear infinite;
 
 }
 
@@ -70,13 +73,16 @@
 
 .sos-box {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    margin: 6rem 21vw;
+    margin: 14rem 21vw;
     padding: 3rem;
 }
 
 @media (max-width:700px) {
     .sos-send {
         flex-direction: column;
+    }
+    .sos-box{
+        margin: 6rem 21vw;
     }
 
 }

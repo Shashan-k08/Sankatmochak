@@ -23,6 +23,7 @@ import Navbar from './components/Navbar';
 import Services from './pages/Services';
 import Testimonial from './pages/Testimonial';
 import Footer from './components/Footer';
+import Sos from './components/sos-box/Sos';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -44,6 +45,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage showalert={showalert} />} />
           <Route exact path='/login' element={<Login showalert={showalert} />} />
+          <Route exact path='/sos' element={<Sos showalert={showalert} />} />
           <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
           <Route exact path='/chat' element={<Chat showalert={showalert} />} />
           <Route exact path='/services' element={<Services showalert={showalert} />} />
@@ -51,7 +53,7 @@ function App() {
           <Route exact path='/chatbox' element={<Chatbox showalert={showalert}/>} />
           <Route exact path='/members/workshop' element={<Workshop showalert={showalert}/>} />
           <Route exact path='/info/earthquake' element={<Earthquake showalert={showalert}/>} />
-          <Route exact path='/info/message' element={<Info showalert={showalert}/>} />
+          <Route exact path='/info-message' element={<Info showalert={showalert}/>} />
           <Route exact path='/info/volunteer' element={<VolunteerInfo showalert={showalert}/>} />
           <Route exact path='/info/earthquake/earthmore' element={<Earthmore showalert={showalert}/>} />
         </Routes>
