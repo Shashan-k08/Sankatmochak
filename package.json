@@ -23,6 +23,7 @@
     "mdb-react-ui-kit": "^6.0.0",
     "mobiscroll": "^3.0.0-beta6",
     "react": "^18.2.0",
+    "react-audio-voice-recorder": "^1.0.11",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.5.2",

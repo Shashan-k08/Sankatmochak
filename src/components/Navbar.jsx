@@ -104,7 +104,7 @@ const handleOn=()=>{
               <a href="/" className="nav-item nav-link active">Home</a>
               <a href="/" className="nav-item nav-link">About</a>
               <a href="/" className="nav-item nav-link">Services</a>
-              <a href="/" className="nav-item nav-link">Packages</a>
+              <a href="http://127.0.0.1:5501/index.html" className="nav-item nav-link">Packages</a>
               <div className="nav-item dropdown">
                 <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div className="dropdown-menu m-0">

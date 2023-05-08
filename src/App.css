@@ -467,3 +467,16 @@ width: 11rem;
 #hiide{
   display: none;
 }
+
+.fl-c{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fl-r{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
