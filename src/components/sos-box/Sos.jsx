@@ -19,17 +19,17 @@ const Sos = () => {
     };
 
     return (
-        <div className='sos-box'>
+        <div className='sos-box fl-c'>
 
             <h3>Quick Services</h3>
-            <div className="sos-send">
+            <div className="sos-send fl-r">
                 <div className="sos-s">
 
-                    <button onClick={handleSendMessage}>Send</button>
+                    <button className='btn-glow' onClick={handleSendMessage}>Send<br/> <b> SOS</b></button>
                 </div>
                 <div className='sos-m'>
                     
-                   <button onClick={handleSendSOS}>Send</button>
+                   <button className='btn-glow2' onClick={handleSendSOS}>Send <br/> <b>MMS</b> </button>
                 </div>
             </div>
         </div>
