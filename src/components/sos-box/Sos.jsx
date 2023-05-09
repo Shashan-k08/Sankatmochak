@@ -30,6 +30,7 @@ const Sos = (props) => {
 
     const showambu = () => {
         setemd(true);
+        props.showalert("Request raised Successfully", "success")
     }
 
     useEffect(() => {
@@ -64,7 +65,7 @@ const Sos = (props) => {
             </div>
             <div className="ambu fl-c">
                 <h5> Tap for Ambulance Support</h5>
-                <button className='ambu-support' onClick={showambu}>  <b>AMBULANCE </b> </button>
+                <button className='ambu-support btn-glow' onClick={showambu}>  <b>AMBULANCE </b> </button>
                 {emd && <div className="userdata fl-c">
                     <h5>Your Location detected</h5>
                     <div className="loca">Lattitude={currentPosition.coords.latitude} <br/>Longitude={currentPosition.coords.longitude} </div>

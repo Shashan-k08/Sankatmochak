@@ -9,9 +9,9 @@ const Registration = () => {
                         <div className="row g-5 align-items-center">
                             <div className="col-md-6 text-white">
                                 <h6 className="text-white text-uppercase">Register</h6>
-                                <h1 className="text-white mb-4">Registration form</h1>
+                                <h1 className="text-white mb-4"> Volunteer Registration form</h1>
                                 <p className="mb-4">Serious action taken  against you if any information provided by you will found fake or biased.</p>
-                                <p className="mb-4">Access to emergency alerts, resources, and support during disasters, and the ability to quickly communicate with family and friends.</p>
+                                <p className="mb-4"> <b>Why not consider becoming a volunteer today? Not only will you be making a positive impact on the lives of others, but you'll also be investing in your own future with the benefits of a certificate of volunteerism. </b></p>
                                 <a className="btn btn-outline-light py-3 px-5 mt-2" href="/">Read More</a>
                             </div>
                             <div className="col-md-6">
@@ -34,6 +34,17 @@ const Registration = () => {
                                             <div className="form-floating date" id="date3" data-target-input="nearest">
                                                 <input type="text" className="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
                                                 <label htmlFor="datetime">Age</label>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <select className="form-select bg-transparent" name="gender" id="select1">
+                                                    <option selected>Select gender</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                                <label htmlFor="select1">Gender</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">

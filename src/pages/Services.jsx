@@ -16,7 +16,7 @@ const Services = () => {
 
     return (
         <>
-            <div className="container-xxl py-5">
+            <div className="container-xxl svc py-5">
                 <div className="container">
                     <div className="text-center wow fadeInUp pointer" data-wow-delay="0.1s">
                         <h6 className="section-title bg-white text-center text-primary px-3">Services</h6>

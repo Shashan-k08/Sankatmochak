@@ -71,7 +71,7 @@ const handlelogout=()=>{
       var elements = document.getElementsByClassName("navbar");
       var i
 
-      if (window.pageYOffset > 45) {
+      if (window.pageYOffset >45) {
 
         for (i = 0; i < elements.length; i++) {
           elements[i].classList.add('sticky-top', 'shadow-sm');
@@ -145,9 +145,7 @@ const handlelogout=()=>{
           <div className=" navbar-collapse show" id="hiide" >
             <div className="navbar-nav ms-auto py-0">
               <a href="/" className="nav-item nav-link active">Home</a>
-              <a href="/" className="nav-item nav-link">About</a>
-              <a href="http://localhost:3000/services" className="nav-item nav-link">Services</a>
-              <a href="http://localhost:3000/testimonials" className="nav-item nav-link">Testimonials</a>
+              <a href="http://localhost:3000/sos" className="nav-item nav-link">SOS</a>
               <div className="nav-item dropdown">
                 <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Disaster-Type</a>
                 <div className="dropdown-menu m-0">
@@ -159,6 +157,8 @@ const handlelogout=()=>{
                   <a href="/" className="dropdown-item">Landsliding</a>
                 </div>
               </div>
+              <a href="http://localhost:3000/services" className="nav-item nav-link">Services</a>
+              <a href="http://localhost:3000/testimonials" className="nav-item nav-link">Testimonials</a>
               <a href="/" className="nav-item nav-link">Contact</a>
             </div>
            {!showlog ? (<div onClick={handleShow} className="btn btn-primary rounded-pill py-2 px-4">Sign-Up</div>):(<>

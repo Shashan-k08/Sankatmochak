@@ -73,8 +73,14 @@
 
 .sos-box {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    margin: 14rem 21vw;
+    margin: 10rem 21vw;
     padding: 3rem;
+}
+div.ambu button{
+    padding: .7rem;
+    color: white;
+    border: none;
+    /* border: #185387; */
 }
 
 @media (max-width:700px) {
