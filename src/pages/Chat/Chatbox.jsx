@@ -51,7 +51,7 @@ const Chatbox = () => {
             <ul>
               {chat.map((payload, index) => {
                 return (
-                  <p key="index">{payload.message}:<span> id:{payload.Username}</span></p>
+                  <p key="index"><span> Shashank</span>:{payload.message}</p>
                 )
               })}
             </ul>

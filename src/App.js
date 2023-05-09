@@ -25,6 +25,7 @@ import Testimonial from './pages/Testimonial';
 import Footer from './components/Footer';
 import Sos from './components/sos-box/Sos';
 import Registration from './pages/Registration';
+import Marquee from './components/Marqueep';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -50,6 +51,7 @@ function App() {
           <Route exact path='/sos' element={<Sos showalert={showalert} />} />
           <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
           <Route exact path='/chat' element={<Chat showalert={showalert} />} />
+          <Route exact path='/marquee' element={<Marquee showalert={showalert} />} />
           <Route exact path='/services' element={<Services showalert={showalert} />} />
           <Route exact path='/testimonials' element={<Testimonial showalert={showalert} />} />
           <Route exact path='/chatbox' element={<Chatbox showalert={showalert}/>} />

@@ -50,9 +50,9 @@ a {
 .chat-container {
 	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     padding: 4vw;
-    margin: 14vw 13vw;
-    /* margin-top: 5rem; */
+    margin: 2vw 13vw;
     border-radius: 5px;
+    transform: scale(.7);
 }
 
 .chat-header {
@@ -144,14 +144,14 @@ a {
 .join-header {
 	text-align: center;
 	padding: 20px;
-	background: #86B817;
+	background: #d1ddd2;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 
 .join-main {
 	padding: 30px 40px;
-	background:  #86B817;
+	background: #d1ddd2;
 }
 
 .join-main p {

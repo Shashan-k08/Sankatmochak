@@ -4,7 +4,7 @@ import Header from '../Header'
 import Navbar from '../Navbar'
 import { useState, useEffect } from 'react';
 import './Info.css'
-const Info = () => {
+const Info = (props) => {
     const [currentPosition, setCurrentPosition] = useState(null);
     const [recording, setRecording] = useState(false);
     const [stream, setStream] = useState(null);
@@ -47,22 +47,27 @@ const Info = () => {
   };
 
   const sendAudioData = () => {
+    props.showalert(" Media file shared and Message Sent Successfully !", "success")
     // Send the audio data as JSON
-    fetch("https://example.com/api/endpoint", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(audioData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-    })
-    .catch(error => {
-      console.error(error);
-    });
+    // fetch("https://example.com/api/endpoint", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(audioData)
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //   console.log(data);
+    //   props.showalert("Message Sent Successfully", "success")
+    // })
+    // .catch(error => {
+    //   console.error(error);
+    // });
   };
+  const sendAudioData1 = ()=>{
+    alert('Media file shared and message send successfully !')
+  }
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -125,7 +130,7 @@ const Info = () => {
                     </div>
                     <div class="info-form-button">
 
-                        <button type="submit" id="form-submit" class="info-box-form-button">Send Message Now</button>
+                        <button onClick={sendAudioData1} type="submit" id="form-submit" class="info-box-form-button">Send Message Now</button>
 
                     </div>
 

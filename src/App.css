@@ -510,3 +510,14 @@ div.login-type{
 .login-type label{
   margin: 1rem;
 }
+
+.marq{
+  padding: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin: 2rem 13rem;
+}
+.marq-box ul li{
+color: red;
+margin: .6rem;
+align-items: start;
+}

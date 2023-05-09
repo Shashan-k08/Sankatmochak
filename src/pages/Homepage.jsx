@@ -13,6 +13,7 @@ import Testimonial from './Testimonial';
 import Login from '../components/Login';
 import Heroheader from '../components/Heroheader';
 import Sos from '../components/sos-box/Sos';
+import Marquee from '../components/Marqueep';
 // import Loader from '../components/Loader';
 const Homepage = (props) => {
     return (
@@ -20,6 +21,7 @@ const Homepage = (props) => {
            
             <Heroheader/>
             <Sos showalert={props.showalert}/>
+            <Marquee showalert={props.showalert}/>
 
             <div className="container-xxl py-5">
                 <div className="container">

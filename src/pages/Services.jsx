@@ -47,20 +47,21 @@ const Services = () => {
                             </div>
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.5s">
-                            <div className="service-item rounded pt-3">
+                         <a href='https://healthviewport.github.io/volunteer/'>  <div className="service-item rounded pt-3">
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-user text-primary mb-4"></i>
                                     <h5>Volunteer Section</h5>
                                     <p>Work with Sankatmochak and get certified. Work for Humanity</p>
                                 </div>
                             </div>
+                            </a> 
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.7s">
                             <div className="service-item rounded pt-3" onClick={moveinfo}>
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-cog text-primary mb-4"></i>
                                     <h5>Sankatmochak Khoya-Paya Segment</h5>
-                                    <p></p>
+                                    <p> This service is to provide the lost or missing one in the disasters</p>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +70,7 @@ const Services = () => {
                                 <div className="p-4" onClick={movechat}>
                                     <i className="fa fa-3x fa-globe text-primary mb-4"></i>
                                     <h5>Interaction area</h5>
-                                    <p>Submit Information about diaster or ask any thing.</p>
+                                    <p>Chat spport for the memebers through their local Volunteers</p>
                                 </div>
                             </div>
                         </div>
