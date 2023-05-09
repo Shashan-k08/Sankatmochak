@@ -1,34 +1,41 @@
-import React, { useState, useEffect, useRef } from 'react';
-import WOW from 'wowjs';
+import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 
-const Earthmore = () => {
-  const [count, setCount] = useState(0);
-  const countRef = useRef(null);
+const socket = io('http://localhost:3001'); // replace with your server URL
+
+function Earthmore() {
+  const [message, setMessage] = useState('');
+  const [chatLog, setChatLog] = useState([]);
+
+  const handleChange = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    socket.emit('chat message', message);
+    setMessage('');
+  };
 
   useEffect(() => {
-    new WOW().init();
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      if (entry.isIntersecting) {
-        let i = 0;
-        const timer = setInterval(() => {
-          if (i < 100) {
-            setCount(i++);
-          } else {
-            clearInterval(timer);
-          }
-        }, 50);
-      }
-    }, { threshold: 0.5 });
-    observer.observe(countRef.current);
-    return () => observer.disconnect();
-  }, []);
+    socket.on('chat message', (msg) => {
+      setChatLog([...chatLog, msg]);
+    });
+  }, [chatLog]);
 
   return (
-    <div ref={countRef} className="wow fadeIn">
-      <h1>Count: {count}</h1>
+    <div className='rrr'>
+      <ul>
+        {chatLog.map((msg, index) => (
+          <li key={index}>{msg}</li>
+        ))}
+      </ul>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={message} onChange={handleChange} />
+        <button type="submit">Send</button>
+      </form>
     </div>
   );
-};
+}
 
-export default Earthmore
+export default Earthmore;

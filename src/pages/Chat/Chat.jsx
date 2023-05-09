@@ -1,11 +1,15 @@
 import React from 'react'
 import Header from '../../components/Header'
 import Navbar from '../../components/Navbar'
+import io from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
-
 import './Chat.css'
+
+
 const Chat = () => {
   let navigate = useNavigate();
+ 
+
   const handlechat = () => {
     navigate("/chatbox");
   }
