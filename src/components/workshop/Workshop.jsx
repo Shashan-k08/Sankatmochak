@@ -4,7 +4,7 @@ import Header from '../Header'
 import Navbar from '../Navbar'
 import Marquee from "react-fast-marquee";
 import './Workshop.css'
-const Workshop = () => {
+const Workshop = (props) => {
     function getTimeRemaining(endtime) {
         var t = Date.parse(endtime) - Date.parse(new Date());
         var seconds = Math.floor((t / 1000) % 60);
@@ -19,7 +19,9 @@ const Workshop = () => {
             'seconds': seconds
         };
     }
-
+const getticket =()=>{
+    props.showalert(" Thank You! ,  ticket will be send to your registered email", "success")
+}
     function initializeClock(endtime) {
         var timeinterval = setInterval(function () {
             var t = getTimeRemaining(endtime);
@@ -69,7 +71,7 @@ const Workshop = () => {
                     <div className="ticket-box">
 
                         <h6>Register yourself <em>get immediate</em> seat</h6>
-                        <button type="submit" id="form-submit" class="button" >Get it now</button>
+                        <button onClick={getticket} type="submit" id="form-submit" class="button" >Get it now</button>
 
                     </div>
                 </div>

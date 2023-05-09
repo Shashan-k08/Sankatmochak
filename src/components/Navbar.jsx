@@ -3,75 +3,75 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import '../login.css'
+import "../App.css"
 
 
 const Navbar = (props) => {
   const navigate = useNavigate();
-  const host ="http://localhost:3008";
+  const host = "http://localhost:3008";
   const [credentials, setcredentials] = useState({ email: "", password: "" })
 
   const [show, setShow] = useState(false);
   const [showlog, setShowlog] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleLogin = async(e)=>{
+  const handleLogin = async (e) => {
     e.preventDefault();
     const response = await fetch(`${host}/api/auth/signIn`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({email:credentials.email,password:credentials.password})
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: credentials.email, password: credentials.password })
     });
     const json = await response.json();
     console.log(json)
-    if(json.success)
-    {   props.showalert("Logged-in Successfully", "success")
-        // save the verification token and redirect
-        setShowlog(true);
-        localStorage.setItem('token',json.verificationtoken);
-        handleClose();
-        
-        navigate("/");
-        props.showalert("Logged-in Successfully", "success")
+    if (json.success) {
+      props.showalert("Logged-in Successfully", "success")
+      // save the verification token and redirect
+      setShowlog(true);
+      localStorage.setItem('token', json.verificationtoken);
+      handleClose();
+
+      navigate("/");
+      props.showalert("Logged-in Successfully", "success")
 
     }
-    else
-    {
-        props.showalert("Invalid details","danger")
+    else {
+      props.showalert("Invalid details", "danger")
     }
   }
 
   const onChange = (e) => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value })
-}
-  
-const handleOn=()=>{
-  var dis = document.getElementById('hiide').style;
-  if(dis.display==="none")
-  dis.display="block";
-  else
-  dis.display="none";
-}
+  }
 
-const handlelogout=()=>{
-   localStorage.removeItem('token');
-   setShowlog(false)
-   props.showalert("Logged-Out-Successfully", "success")
-   
-}
+  const handleOn = () => {
+    var dis = document.getElementById('hiide').style;
+    if (dis.display === "none")
+      dis.display = "block";
+    else
+      dis.display = "none";
+  }
+
+  const handlelogout = () => {
+    localStorage.removeItem('token');
+    setShowlog(false)
+    props.showalert("Logged-Out-Successfully", "success")
+
+  }
 
   useEffect(() => {
     const abd = localStorage.getItem('token');
-    if(abd)
-    setShowlog(true)
+    if (abd)
+      setShowlog(true)
     console.log(localStorage.getItem('token'))
 
-   window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', function () {
       var elements = document.getElementsByClassName("navbar");
       var i
 
-      if (window.pageYOffset >45) {
+      if (window.pageYOffset > 45) {
 
         for (i = 0; i < elements.length; i++) {
           elements[i].classList.add('sticky-top', 'shadow-sm');
@@ -101,17 +101,33 @@ const handlelogout=()=>{
           <div>
 
             <div id="login-form-wrap">
-              <h2>Login</h2>
+              <h2>Login as</h2>
               <form className='form2' id="login-form" onSubmit={handleLogin}>
-               
+                
+                <div className="login-type">
+                  <div>
+                    <label>
+                      <input
+                        type="radio" className= "bg3"value="admin"/>Admin</label>
+                  </div>
+                  <div>
+                    <label>
+                      <input
+                        type="radio" className= "bg3" value="volunteer" /> Volunteer </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type="radio" className= "bg3" value="member"/>Member </label>
+                  </div>
+                </div>
                 <p>
-                  <input type="email"  name="email" onChange={onChange} value={credentials.email} placeholder=" Enter your Email" required/><i class="validation" ><span></span><span></span></i>
+                  <input type="email" name="email" onChange={onChange} value={credentials.email} placeholder=" Enter your Email" required /><i class="validation" ><span></span><span></span></i>
                 </p>
                 <p>
-                  <input type="password" id="username" onChange={onChange} name="password" value={credentials.password} placeholder="Enter your password" required/><i class="validation" ><span></span><span></span></i>
+                  <input type="password" id="username" onChange={onChange} name="password" value={credentials.password} placeholder="Enter your password" required /><i class="validation" ><span></span><span></span></i>
                 </p>
                 <p>
-                  <input type="submit" className='login-but'  value="Login" />
+                  <input type="submit" className='login-but' value="Login" />
                 </p>
               </form>
               <div id="create-account-wrap">
@@ -139,7 +155,7 @@ const handlelogout=()=>{
             <h1 className="text-primary m-0">Sankatmochak</h1>
 
           </a>
-          <button className="navbar-toggler "  onClick={handleOn} type="button" >
+          <button className="navbar-toggler " onClick={handleOn} type="button" >
             <span className="fa fa-bars"></span>
           </button>
           <div className=" navbar-collapse show" id="hiide" >
@@ -158,15 +174,28 @@ const handlelogout=()=>{
                 </div>
               </div>
               <a href="http://localhost:3000/services" className="nav-item nav-link">Services</a>
-              <a href="http://localhost:3000/testimonials" className="nav-item nav-link">Testimonials</a>
-              <a href="/" className="nav-item nav-link">Contact</a>
+              <div className="nav-item dropdown">
+                <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Health Info</a>
+                <div className="dropdown-menu m-0">
+                  <a href="https://healthviewport.github.io/bed-tracker/" className="dropdown-item">NearBy Sankatmochak Centres</a>
+                  <a href="https://healthviewport.github.io/information/" className="dropdown-item">Info about Emergency Supply</a>
+                </div>
+              </div>
+              <div className="nav-item dropdown">
+                <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Volunteer</a>
+                <div className="dropdown-menu m-0">
+                  <a href=" " className="dropdown-item">Training & Programs</a>
+                  <a href="/" className="dropdown-item">Info Upload</a>
+                  <a href="/" className="dropdown-item">Media Sharing</a>
+                </div>
+              </div>
             </div>
-           {!showlog ? (<div onClick={handleShow} className="btn btn-primary rounded-pill py-2 px-4">Sign-Up</div>):(<>
-        <div onClick={handlelogout} className="btn btn-primary rounded-pill py-2 px-4">Logout</div> </>)}
-        </div>
+            {!showlog ? (<div onClick={handleShow} className="btn btn-primary rounded-pill py-2 px-4">Sign-In</div>) : (<>
+              <div onClick={handlelogout} className="btn btn-primary rounded-pill py-2 px-4">Logout</div> </>)}
+          </div>
         </nav>
 
-       
+
       </div>
     </>
   )

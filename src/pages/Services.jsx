@@ -7,11 +7,15 @@ const Services = () => {
         navigate('/chat')
     }
 
-    const moveshop = ()=>{
+    const moveshop = () => {
         navigate("/members/workshop")
     }
-    const moveinfo=()=>{
+    const moveinfo = () => {
         navigate("/info/message")
+    }
+
+    const moveearth = () => {
+        navigate("/info/earthquake")
     }
 
     return (
@@ -24,16 +28,17 @@ const Services = () => {
                     </div>
                     <div className="row g-4" >
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.1s">
-                            <div className="service-item rounded pt-3">
+                            <a href='https://healthviewport.github.io/information/'>   <div className="service-item rounded pt-3">
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-globe text-primary mb-4 pointer"></i>
                                     <h5> Information About Emergency Supplies </h5>
                                     <p>Get Information about deliver emergency supplies such as food, water, and medical equipment to your area </p>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.3s">
-                            <div className="service-item rounded pt-3">
+                            <div className="service-item rounded pt-3" onClick={moveearth}>
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-hotel text-primary mb-4"></i>
                                     <h5> Status of Red Zone Regions</h5>
@@ -54,8 +59,8 @@ const Services = () => {
                             <div className="service-item rounded pt-3" onClick={moveinfo}>
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-cog text-primary mb-4"></i>
-                                    <h5>Send real time Info</h5>
-                                    <p>All Real Time information about diaster and management by Sankatmochak</p>
+                                    <h5>Sankatmochak Khoya-Paya Segment</h5>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
@@ -81,19 +86,20 @@ const Services = () => {
                             <div className="service-item rounded pt-3">
                                 <div className="p-4" onClick={moveshop}>
                                     <i className="fa fa-3x fa-user text-primary mb-4"></i>
-                                  <a href='localhost:3000/members/workshop'>  <h5>Workshops and trainee calender</h5></a>
+                                    <a href='localhost:3000/members/workshop'>  <h5>Workshops and trainee calender</h5></a>
                                     <p>Important date about Preparing, learning skill in high risk regions.</p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.7s">
-                            <div className="service-item rounded pt-3">
+                          <a href='https://healthviewport.github.io/bed-tracker/'>  <div className="service-item rounded pt-3">
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-cog text-primary mb-4"></i>
-                                    <h5>Sankatmochak Local center management</h5>
+                                    <h5>  Nearby Sankatmochak Centres</h5>
                                     <p>Information of all essential things like first aid and other emergency response and active teams.</p>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>

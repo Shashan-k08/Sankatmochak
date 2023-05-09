@@ -12,8 +12,7 @@ const Chat = () => {
   return (
     <>
       <div className="chat-wrap">
-        <Header />
-        <Navbar />
+       
         <div class="join-container">
           <header class="join-header">
             <h1><i class="fas fa-smile"></i> Chat with your Local Volunteer</h1>

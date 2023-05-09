@@ -495,3 +495,18 @@ width: 11rem;
 .container{
   padding-top: 6rem;
 }
+
+div.login-type{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg3{
+  height: 1rem;
+}
+
+.login-type label{
+  margin: 1rem;
+}
