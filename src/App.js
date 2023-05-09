@@ -24,6 +24,7 @@ import Services from './pages/Services';
 import Testimonial from './pages/Testimonial';
 import Footer from './components/Footer';
 import Sos from './components/sos-box/Sos';
+import Registration from './pages/Registration';
 
 function App() {
   const [alert, setalert] = useState(null);
@@ -45,6 +46,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage showalert={showalert} />} />
           <Route exact path='/login' element={<Login showalert={showalert} />} />
+          <Route exact path='/register' element={<Registration showalert={showalert} />} />
           <Route exact path='/sos' element={<Sos showalert={showalert} />} />
           <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
           <Route exact path='/chat' element={<Chat showalert={showalert} />} />
