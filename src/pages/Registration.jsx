@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
-const Registration = () => {
+const Registration = (props) => {
     const [credentials, setcredentials] = useState({ name: "", email: "", gender: "", age: "", about: "" })
     const host = "http://localhost:3008/api/form/reguser";
+     
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, email, gender, age, about } = credentials;
+       
         const response = await fetch(host, {
             method: 'POST',
             headers: {
@@ -15,8 +17,13 @@ const Registration = () => {
 
         })
         const json = await response.json();
-
-        console.log(json);
+        if(json.success)
+    {   props.showalert("FORM has been Submitted(After verification we will send a confirmation email)", "success")
+    }
+    else
+    {
+        props.showalert("Invalid details","danger")
+    }
         console.log(credentials);
     }
     const onchange = (e) => {
@@ -42,19 +49,19 @@ const Registration = () => {
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="text" onChange={onchange} className="form-control bg-transparent" id="name" placeholder="Your Name" />
+                                                <input type="text" onChange={onchange} name="name" className="form-control bg-transparent" id="name" placeholder="Your Name" />
                                                 <label htmlFor="name">Your Name</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="email" onChange={onchange} className="form-control bg-transparent" id="email" placeholder="Your Email" />
+                                                <input type="email" onChange={onchange} name="email" className="form-control bg-transparent" id="email" placeholder="Your Email" />
                                                 <label htmlFor="email">Your Email</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating date" id="date3" data-target-input="nearest">
-                                                <input type="text" onChange={onchange} className="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                                <input type="text" onChange={onchange} name="age" className="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
                                                 <label htmlFor="datetime">Age</label>
                                             </div>
                                         </div>
@@ -71,7 +78,7 @@ const Registration = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select className="form-select bg-transparent" onChange={onchange} id="select1">
+                                                <select className="form-select bg-transparent"  id="select1">
                                                     <option value="1">Aadhar Number</option>
                                                     <option value="2">Pan Number</option>
                                                     <option value="3">Voter's Id Number</option>
@@ -81,7 +88,7 @@ const Registration = () => {
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <textarea className="form-control bg-transparent" onChange={onchange} name="about" placeholder="Special Request" id="message" style={{ height: "100px" }}></textarea>
+                                                <textarea className="form-control bg-transparent" name="about" onChange={onchange}  placeholder="Special Request" id="message" style={{ height: "100px" }}></textarea>
                                                 <label htmlFor="message"></label>
                                             </div>
                                         </div>

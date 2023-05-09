@@ -59,10 +59,10 @@ const Homepage = (props) => {
                     </div>
                 </div>
             </div>
-            <Services />
+            <Services showalert={props.showalert} />
             <Donation />
-            <Registration />
-            <Volunteer />
+            <Registration showalert={props.showalert} />
+            <Volunteer showalert={props.showalert} />
             <Partners />
             <Testimonial/>
            
