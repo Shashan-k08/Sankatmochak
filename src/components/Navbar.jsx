@@ -184,9 +184,10 @@ const Navbar = (props) => {
               <div className="nav-item dropdown">
                 <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Volunteer</a>
                 <div className="dropdown-menu m-0">
-                  <a href=" " className="dropdown-item">Training & Programs</a>
-                  <a href="/" className="dropdown-item">Info Upload</a>
-                  <a href="/" className="dropdown-item">Media Sharing</a>
+                  <a href="http://localhost:3000/members/workshop" className="dropdown-item">Training & Programs</a>
+                  <a href="/" className="dropdown-item">Info-Upload</a>
+                  <a href="/" className="dropdown-item">Media-Sharing</a>
+                  <a href="http://localhost:3000/register" className="dropdown-item">Member-Registration</a>
                 </div>
               </div>
             </div>
