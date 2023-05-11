@@ -2,12 +2,12 @@ import React from 'react'
 import { useState } from 'react';
 const Registration = (props) => {
     const [credentials, setcredentials] = useState({ name: "", email: "", gender: "", age: "", about: "" })
-    const host = "http://localhost:3008/api/form/reguser";
-     
+    const host = "https://sankatmochak-backend.onrender.com/api/form/reguser";
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, email, gender, age, about } = credentials;
-       
+
         const response = await fetch(host, {
             method: 'POST',
             headers: {
@@ -17,13 +17,12 @@ const Registration = (props) => {
 
         })
         const json = await response.json();
-        if(json.success)
-    {   props.showalert("FORM has been Submitted(After verification we will send a confirmation email)", "success")
-    }
-    else
-    {
-        props.showalert("Invalid details","danger")
-    }
+        if (json.success) {
+            props.showalert("FORM has been Submitted(After verification we will send a confirmation email)", "success")
+        }
+        else {
+            props.showalert("Invalid details", "danger")
+        }
         console.log(credentials);
     }
     const onchange = (e) => {
@@ -78,7 +77,7 @@ const Registration = (props) => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select className="form-select bg-transparent"  id="select1">
+                                                <select className="form-select bg-transparent" id="select1">
                                                     <option value="1">Aadhar Number</option>
                                                     <option value="2">Pan Number</option>
                                                     <option value="3">Voter's Id Number</option>
@@ -88,7 +87,7 @@ const Registration = (props) => {
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <textarea className="form-control bg-transparent" name="about" onChange={onchange}  placeholder="Special Request" id="message" style={{ height: "100px" }}></textarea>
+                                                <textarea className="form-control bg-transparent" name="about" onChange={onchange} placeholder="Special Request" id="message" style={{ height: "100px" }}></textarea>
                                                 <label htmlFor="message"></label>
                                             </div>
                                         </div>

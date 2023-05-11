@@ -1,7 +1,4 @@
 import React from 'react'
-import Footer from '../Footer';
-import Header from '../Header';
-import Navbar from '../Navbar';
 import { useState } from 'react';
 import './signup.css';
 
@@ -9,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Signup = (props) => {
     let navigate = useNavigate();
     const [credentials, setcredentials] = useState({ name: "", email:"",password:"",state:"" })
-    const host = "http://localhost:3008/api/auth/signUp";
+    const host = "https://sankatmochak-backend.onrender.com/api/auth/signUp";
     const handleSubmit = async (e) => {
         e.preventDefault();
          const { name, email,password,state } = credentials;

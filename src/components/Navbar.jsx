@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import '../login.css'
@@ -8,7 +7,7 @@ import "../App.css"
 
 const Navbar = (props) => {
   const navigate = useNavigate();
-  const host = "http://localhost:3008";
+  const host = "https://sankatmochak-backend.onrender.com";
   const [credentials, setcredentials] = useState({ email: "", password: "" })
 
   const [show, setShow] = useState(false);

@@ -32,7 +32,7 @@ const Services = () => {
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-globe text-primary mb-4 pointer"></i>
                                     <h5> Information About Emergency Supplies </h5>
-                                    <p>Get Information about deliver emergency supplies such as food, water, and medical equipment to your area </p>
+                                    <p>Get Information about emergency supplies such as Bed availability,Medical equipment ,Food etc in Nearby Sankatmochak Centres</p>
                                 </div>
                             </div>
                             </a>
@@ -42,7 +42,7 @@ const Services = () => {
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-hotel text-primary mb-4"></i>
                                     <h5> Status of Red Zone Regions</h5>
-                                    <p> a comprehensive list of high-risk disaster areas with real-time accuracy.</p>
+                                    <p>Just share your location and get the list of high-risk Disasters with real-time accuracy.</p>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@ const Services = () => {
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-user text-primary mb-4"></i>
                                     <h5>Volunteer Section</h5>
-                                    <p>Work with Sankatmochak and get certified. Work for Humanity</p>
+                                    <p> List of active Volunteers in your area and Volunteer registration section</p>
                                 </div>
                             </div>
                             </a> 
@@ -61,7 +61,7 @@ const Services = () => {
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-cog text-primary mb-4"></i>
                                     <h5>Sankatmochak Khoya-Paya Segment</h5>
-                                    <p> This service is to provide the lost or missing one in the disasters</p>
+                                    <p> This service is to Help in finding the lost or missing persons  in the disasters</p>
                                 </div>
                             </div>
                         </div>
@@ -78,8 +78,8 @@ const Services = () => {
                             <div className="service-item rounded pt-3">
                                 <div className="p-4">
                                     <a href="/" >   <i className="fa fa-3x fa-globe text-primary mb-4"></i>
-                                        <h5>Donation Box</h5>
-                                        <p>The meaning of life is to find your gift. The purpose of life is to give it away.</p></a>
+                                        <h5>Fake news Detection</h5>
+                                        <p>This service is detect the circulation of fake news at the time of Disasters</p></a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ const Services = () => {
                                 <div className="p-4" onClick={moveshop}>
                                     <i className="fa fa-3x fa-user text-primary mb-4"></i>
                                     <a href='localhost:3000/members/workshop'>  <h5>Workshops and trainee calender</h5></a>
-                                    <p>Important date about Preparing, learning skill in high risk regions.</p>
+                                    <p>Get the information of the running programs and Wrokshops in your area.</p>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ const Services = () => {
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-cog text-primary mb-4"></i>
                                     <h5>  Nearby Sankatmochak Centres</h5>
-                                    <p>Information of all essential things like first aid and other emergency response and active teams.</p>
+                                    <p>Just locate and get the Information of all essential things like first aid and other emergency response and active teams in your area.</p>
                                 </div>
                             </div>
                             </a>
