@@ -9,21 +9,34 @@ const Sos = (props) => {
     const [sos, setSOS] = useState('');
     const [currentPosition, setCurrentPosition] = useState(null);
     const [emd, setemd] = useState(false)
-    
-    const handleSendMessage = () => {
-        // Code to send message
-        props.showalert("ACESS:Denied - Admin Access Only", "danger")
-        console.log('Sending message:', message);
-        setMessage('');
-    };
+
     const handleSendSOS = () => {
+        // Code to send message
+        if (localStorage.getItem('token'))
+        {
+            props.showalert("ACESS:Denied - Admin Access Only", "danger")
+            console.log('Sending message:', message);
+            setMessage('');
+        }
+        else
+        {
+            props.showalert("ACESS:Denied - Login Required", "danger")
+        }
+      
+    };
+    const handleSendMessage = () => {
+        if (localStorage.getItem('token')) {
+
+            navigate1('/info-message')
+            props.showalert("ACESS - Provided ", "success")
+            console.log('Sending SOS:', sos);
+            setSOS('');
+        }
+        else {
+            props.showalert("ACESS:Denied - Login Required", "danger")
+        }
         // Code to send SOS
-        navigate1('/info-message')
-        props.showalert("ACESS - Provided ", "success")
 
-        console.log('Sending SOS:', sos);
-
-        setSOS('');
     };
     const movesos = () => {
         navigate('/sos')
@@ -57,11 +70,11 @@ const Sos = (props) => {
             <div className="sos-send fl-r">
                 <div className="sos-s">
 
-                    <button className='btn-glow' onClick={handleSendMessage}>Send<br /> <b> SOS</b></button>
+                    <button className='btn-glow' onClick={handleSendSOS}>Send<br /> <b> SOS</b></button>
                 </div>
                 <div className='sos-m'>
 
-                    <button className='btn-glow2' onClick={handleSendSOS}>Send <br /> <b>MMS</b> </button>
+                    <button className='btn-glow2' onClick={handleSendMessage}>Send <br /> <b>MMS</b> </button>
                 </div>
             </div>
             <div className="ambu fl-c">
@@ -69,7 +82,7 @@ const Sos = (props) => {
                 <button className='ambu-support btn-glow' onClick={showambu}>  <b>AMBULANCE </b> </button>
                 {emd && <div className="userdata fl-c">
                     <h5>Your Location detected</h5>
-                    <div className="loca">Lattitude={currentPosition.coords.latitude} <br/>Longitude={currentPosition.coords.longitude} </div>
+                    <div className="loca">Lattitude={currentPosition.coords.latitude} <br />Longitude={currentPosition.coords.longitude} </div>
                     <h7>Reaching to You in 15 min</h7>
                 </div>}
             </div>
