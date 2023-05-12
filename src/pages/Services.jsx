@@ -1,21 +1,37 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../App.css'
-const Services = () => {
+const Services = (props) => {
     let navigate = useNavigate();
     const movechat = () => {
-        navigate('/chat')
+        if (localStorage.getItem('token'))
+            navigate('/chat')
+        else {
+            props.showalert("ACESS:Denied - Login Required", "danger")
+        }
     }
 
     const moveshop = () => {
-        navigate("/members/workshop")
+        if (localStorage.getItem('token'))
+            navigate("/members/workshop")
+        else {
+            props.showalert("ACESS:Denied - Login Required", "danger")
+        }
     }
     const moveinfo = () => {
-        navigate("/info/message")
+        if (localStorage.getItem('token'))
+            navigate("/info/message")
+        else {
+            props.showalert("ACESS:Denied - Login Required", "danger")
+        }
     }
 
     const moveearth = () => {
-        navigate("/info/earthquake")
+        if (localStorage.getItem('token'))
+            navigate("/info/earthquake")
+        else {
+            props.showalert("ACESS:Denied - Login Required", "danger")
+        }
     }
 
     return (
@@ -47,14 +63,14 @@ const Services = () => {
                             </div>
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.5s">
-                         <a href='https://healthviewport.github.io/volunteer/'>  <div className="service-item rounded pt-3">
+                            <a href='https://healthviewport.github.io/volunteer/'>  <div className="service-item rounded pt-3">
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-user text-primary mb-4"></i>
                                     <h5>Volunteer Section</h5>
                                     <p> List of active Volunteers in your area and Volunteer registration section</p>
                                 </div>
                             </div>
-                            </a> 
+                            </a>
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.7s">
                             <div className="service-item rounded pt-3" onClick={moveinfo}>
@@ -93,7 +109,7 @@ const Services = () => {
                             </div>
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.7s">
-                          <a href='https://healthviewport.github.io/bed-tracker/'>  <div className="service-item rounded pt-3">
+                            <a href='https://healthviewport.github.io/bed-tracker/'>  <div className="service-item rounded pt-3">
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-cog text-primary mb-4"></i>
                                     <h5>  Nearby Sankatmochak Centres</h5>
