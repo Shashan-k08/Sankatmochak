@@ -9,6 +9,7 @@ const Sos = (props) => {
     const [sos, setSOS] = useState('');
     const [currentPosition, setCurrentPosition] = useState(null);
     const [emd, setemd] = useState(false)
+    
     const handleSendMessage = () => {
         // Code to send message
         props.showalert("ACESS:Denied - Admin Access Only", "danger")
