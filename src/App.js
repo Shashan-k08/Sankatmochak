@@ -40,6 +40,7 @@ function App() {
   }
   return (
     <>
+    <div className="homecl fl-c">
       <Router>
       <Alert alert={alert} />
       <Header/>
@@ -63,6 +64,7 @@ function App() {
         </Routes>
         <Footer/>
       </Router>
+      </div>
     </>
   );
 }

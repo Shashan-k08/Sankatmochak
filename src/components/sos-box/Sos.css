@@ -75,6 +75,7 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     margin: 10rem 21vw;
     padding: 3rem;
+    text-align: center;
 }
 div.ambu button{
     padding: .7rem;
@@ -88,7 +89,7 @@ div.ambu button{
         flex-direction: column;
     }
     .sos-box{
-        margin: 6rem 21vw;
+        margin: 6rem 7vw;
     }
 
 }

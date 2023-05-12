@@ -18,8 +18,6 @@ const Homepage = (props) => {
             <Heroheader/>
             <Sos showalert={props.showalert}/>
             <Marquee showalert={props.showalert}/>
-
-           
             <Services showalert={props.showalert} />
             <Donation />
             <Registration showalert={props.showalert} />

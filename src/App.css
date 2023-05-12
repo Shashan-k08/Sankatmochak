@@ -521,3 +521,14 @@ color: red;
 margin: .6rem;
 align-items: start;
 }
+
+
+.et{
+  margin-top: 11rem;
+}
+
+.navb-p {
+text-decoration: underline;
+cursor: pointer;
+color: #86B817;
+}

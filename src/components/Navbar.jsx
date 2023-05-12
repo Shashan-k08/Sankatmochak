@@ -40,7 +40,10 @@ const Navbar = (props) => {
       props.showalert("Invalid details", "danger")
     }
   }
-
+const movesignup=()=>{
+  navigate('/signup');
+  handleClose();
+}
   const onChange = (e) => {
     setcredentials({ ...credentials, [e.target.name]: e.target.value })
   }
@@ -130,7 +133,7 @@ const Navbar = (props) => {
                 </p>
               </form>
               <div id="create-account-wrap">
-                <p> Not a member? <a href="/signup">Create Account</a></p>
+                <p> Not a member? <p  className='navb-p' onClick={movesignup}>Create Account</p></p>
 
               </div>
             </div>

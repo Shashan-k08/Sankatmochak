@@ -1,40 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import io from 'socket.io-client';
-
-const socket = io('http://localhost:3001'); // replace with your server URL
+import React, { useState } from 'react';
 
 function Earthmore() {
-  const [message, setMessage] = useState('');
-  const [chatLog, setChatLog] = useState([]);
+  const [inputFields, setInputFields] = useState([]);
+  const [content, setcontent] = useState({name: "",age: "",class: ""})
 
-  const handleChange = (event) => {
-    setMessage(event.target.value);
+  const handleAddFields = () => {
+    setInputFields([...inputFields ,{name:"ddf",age:"",class:""}]);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    socket.emit('chat message', message);
-    setMessage('');
+  const handleInputChange = (index, event) => {
+     const values = [...inputFields];
+     setcontent({...content,[event.target.name]:[event.target.value]});
+  //  values[index].name = event.target.value;
+  //  values[index].class = event.target.value;
+  //  values[index].age = event.target.value;
+  values[index]=content;
+
+    setInputFields(values);
   };
 
-  useEffect(() => {
-    socket.on('chat message', (msg) => {
-      setChatLog([...chatLog, msg]);
-    });
-  }, [chatLog]);
+  const  handleInputChange1=(event,index)=> {
+    handleInputChange(event,index);
+    handleinputvalue(event,index);
+  }
+  const handleinputvalue=(event)=>{
+    setcontent({...content,[event.target.name]:[event.target.value]});
+   // handleInputChange(event,index)
+   
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+   // console.log('Input fields:',inputFields );
+    console.log(content)
+  };
 
   return (
-    <div className='rrr'>
-      <ul>
-        {chatLog.map((msg, index) => (
-          <li key={index}>{msg}</li>
-        ))}
-      </ul>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={message} onChange={handleChange} />
-        <button type="submit">Send</button>
-      </form>
-    </div>
+    <form  className="et fl-c">
+      {inputFields.map((inputField, index) => (
+        
+        <div key={index} className="fl-r">
+          <h6>Enter your name</h6>
+          <input type="text" name="name" value={content.name} onChange={handleinputvalue} />
+          <input type="text" name="age" value={content.age} onChange={handleinputvalue} />
+          <input type="text" name="class" value={content.class} onChange ={handleinputvalue} />
+        </div>
+      ))}
+      <button type="button" onClick={handleAddFields}>Add Input Field</button>
+      <button type="submit" onClick={handleSubmit}>Submit</button>
+    </form>
   );
 }
 
