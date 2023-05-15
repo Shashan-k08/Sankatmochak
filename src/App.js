@@ -7,7 +7,6 @@ import {
   Route,
 
 } from "react-router-dom";
-import Login from './components/Login';
 import SignUp from './components/signup/Signup.jsx';
 import Chat from './pages/Chat/Chat';
 import Info from './components/info/Info.jsx';
@@ -47,7 +46,6 @@ function App() {
       <Navbar  showalert={showalert} />
         <Routes>
           <Route path='/' element={<Homepage showalert={showalert} />} />
-          <Route exact path='/login' element={<Login showalert={showalert} />} />
           <Route exact path='/register' element={<Registration showalert={showalert} />} />
           <Route exact path='/sos' element={<Sos showalert={showalert} />} />
           <Route exact path='/signup' element={<SignUp showalert={showalert} />} />
