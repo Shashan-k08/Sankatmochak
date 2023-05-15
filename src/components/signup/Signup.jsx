@@ -1,14 +1,18 @@
 import React from 'react'
 import { useState } from 'react';
 import './signup.css';
+import Spinner from '../spinner/Spinner'
+
 
 import { useNavigate } from 'react-router-dom';
 const Signup = (props) => {
     let navigate = useNavigate();
     const [credentials, setcredentials] = useState({ name: "", email:"",password:"",state:"" })
     const host = "https://sankatmochak-backend.onrender.com/api/auth/signUp";
+    const [loading, setloading] = useState(false);
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setloading(true);
          const { name, email,password,state } = credentials;
         const response = await fetch(host, {
             method: 'POST',
@@ -17,6 +21,7 @@ const Signup = (props) => {
             },
             body: JSON.stringify({  name, email,password,state})
         })
+        setloading(false);
         const json = await response.json();
 
         if (json.success) {
@@ -38,6 +43,7 @@ const Signup = (props) => {
                 <h1>Join Us</h1>
 
                 <form>
+                {loading && <Spinner /> }
                     <label>Name</label>
                     <input type="text" onChange={onchange} placeholder="Enter your name" name='name' />
                     <label>Select the state you belong</label>

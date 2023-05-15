@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
+import Spinner from '../components/spinner/Spinner'
 import '../login.css'
 import "../App.css"
 
@@ -9,13 +10,14 @@ const Navbar = (props) => {
   const navigate = useNavigate();
   const host = "https://sankatmochak-backend.onrender.com";
   const [credentials, setcredentials] = useState({ email: "", password: "" })
-
+  const [loading, setloading] = useState(false);
   const [show, setShow] = useState(false);
   const [showlog, setShowlog] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleLogin = async (e) => {
     e.preventDefault();
+    setloading(true);
     const response = await fetch(`${host}/api/auth/signIn`, {
       method: 'POST',
       headers: {
@@ -23,7 +25,9 @@ const Navbar = (props) => {
       },
       body: JSON.stringify({ email: credentials.email, password: credentials.password })
     });
+    setloading(false);
     const json = await response.json();
+    
     console.log(json)
     if (json.success) {
       props.showalert("Logged-in Successfully", "success")
@@ -94,7 +98,7 @@ const movesignup=()=>{
       {/* <Button variant="primary" onClick={handleShow}>
         Launch demo modal
       </Button> */}
-
+  {loading ? <Spinner /> :
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Sankatmochak</Modal.Title>
@@ -150,7 +154,7 @@ const movesignup=()=>{
           </Button> */}
         </Modal.Footer>
       </Modal>
-
+}
       <div className="container-fluid position-relative p-0">
         <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" id='er'>
           <a href="/" className="navbar-brand p-0">
