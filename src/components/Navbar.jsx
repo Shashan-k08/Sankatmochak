@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import Spinner from '../components/spinner/Spinner'
 import '../login.css'
@@ -167,19 +167,19 @@ const movesignup=()=>{
           <div className=" navbar-collapse show" id="hiide" >
             <div className="navbar-nav ms-auto py-0">
               <a href="/" className="nav-item nav-link active">Home</a>
-              <a href="http://localhost:3000/sos" className="nav-item nav-link">SOS</a>
+              <Link to="/sos" className="nav-item nav-link">SOS</Link>
               <div className="nav-item dropdown">
                 <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Disaster-Type</a>
                 <div className="dropdown-menu m-0">
-                  <a href="http://localhost:3000/info/earthquake
-                  " className="dropdown-item">Earthquake</a>
-                  <a href="/" className="dropdown-item">Tsunami</a>
-                  <a href="/" className="dropdown-item">Corona</a>
-                  <a href="/" className="dropdown-item">Communal-War</a>
-                  <a href="/" className="dropdown-item">Landsliding</a>
+                  <Link to="/info/earthquake
+                  " className="dropdown-item">Earthquake</Link>
+                  <a href="/info/earthquake" className="dropdown-item">Tsunami</a>
+                  <a href="/info/earthquake" className="dropdown-item">Corona</a>
+                  <a href="/info/earthquake" className="dropdown-item">Communal-War</a>
+                  <a href="/info/earthquake" className="dropdown-item">Landsliding</a>
                 </div>
               </div>
-              <a href="http://localhost:3000/services" className="nav-item nav-link">Services</a>
+              <a href="/services" className="nav-item nav-link">Services</a>
               <div className="nav-item dropdown">
                 <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Health Info</a>
                 <div className="dropdown-menu m-0">
@@ -190,10 +190,10 @@ const movesignup=()=>{
               <div className="nav-item dropdown">
                 <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Volunteer</a>
                 <div className="dropdown-menu m-0">
-                  <a href="http://localhost:3000/members/workshop" className="dropdown-item">Training & Programs</a>
+                  <a href="/members/workshop" className="dropdown-item">Training & Programs</a>
                   <a href="/" className="dropdown-item">Info-Upload</a>
                   <a href="/" className="dropdown-item">Media-Sharing</a>
-                  <a href="http://localhost:3000/register" className="dropdown-item">Member-Registration</a>
+                  <a href="/register" className="dropdown-item">Member-Registration</a>
                 </div>
               </div>
             </div>

@@ -14,6 +14,7 @@ const Signup = (props) => {
         e.preventDefault();
         setloading(true);
          const { name, email,password,state } = credentials;
+         setcredentials({name:"",email:"",password:""})
         const response = await fetch(host, {
             method: 'POST',
             headers: {

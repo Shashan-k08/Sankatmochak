@@ -1,8 +1,16 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import WOW from 'wowjs';
+import { useNavigate,Link } from 'react-router-dom';
 import '../App.css'
 const Services = (props) => {
     let navigate = useNavigate();
+
+
+    useEffect(() => {
+        const wow = new WOW.WOW();
+        wow.init();
+      }, []);
     const movechat = () => {
         if (localStorage.getItem('token'))
             navigate('/chat')
@@ -103,7 +111,7 @@ const Services = (props) => {
                             <div className="service-item rounded pt-3">
                                 <div className="p-4" onClick={moveshop}>
                                     <i className="fa fa-3x fa-user text-primary mb-4"></i>
-                                    <a href='localhost:3000/members/workshop'>  <h5>Workshops and trainee calender</h5></a>
+                                    <Link  to='/members/workshop'>  <h5>Workshops and trainee calender</h5></Link>
                                     <p>Get the information of the running programs and Wrokshops in your area.</p>
                                 </div>
                             </div>

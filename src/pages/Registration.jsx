@@ -16,6 +16,7 @@ const Registration = (props) => {
             body: JSON.stringify({ name, email, gender, age, about })
 
         })
+      setcredentials({name:"",age:"",about:"",email:"",gender:""})
         const json = await response.json();
         if (json.success) {
             props.showalert("FORM has been Submitted(After verification we will send a confirmation email)", "success")
@@ -48,25 +49,25 @@ const Registration = (props) => {
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="text" onChange={onchange} name="name" className="form-control bg-transparent" id="name" placeholder="Your Name" />
+                                                <input type="text" value={credentials.name} onChange={onchange} name="name" className="form-control bg-transparent" id="name" placeholder="Your Name" />
                                                 <label htmlFor="name">Your Name</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <input type="email" onChange={onchange} name="email" className="form-control bg-transparent" id="email" placeholder="Your Email" />
+                                                <input type="email"  value={credentials.email} onChange={onchange} name="email" className="form-control bg-transparent" id="email" placeholder="Your Email" />
                                                 <label htmlFor="email">Your Email</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating date" id="date3" data-target-input="nearest">
-                                                <input type="text" onChange={onchange} name="age" className="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                                <input type="text"  value={credentials.age} onChange={onchange} name="age" className="form-control bg-transparent datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
                                                 <label htmlFor="datetime">Age</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select className="form-select bg-transparent" onChange={onchange} name="gender" id="select1">
+                                                <select className="form-select bg-transparent"  value={credentials.gender} onChange={onchange} name="gender" id="select1">
                                                     <option selected>Select gender</option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
@@ -77,7 +78,7 @@ const Registration = (props) => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select className="form-select bg-transparent" id="select1">
+                                                <select className="form-select bg-transparent"   id="select1">
                                                     <option value="1">Aadhar Number</option>
                                                     <option value="2">Pan Number</option>
                                                     <option value="3">Voter's Id Number</option>
@@ -87,7 +88,7 @@ const Registration = (props) => {
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <textarea className="form-control bg-transparent" name="about" onChange={onchange} placeholder="Special Request" id="message" style={{ height: "100px" }}></textarea>
+                                                <textarea className="form-control bg-transparent"  value={credentials.about} name="about" onChange={onchange} placeholder="Special Request" id="message" style={{ height: "100px" }}></textarea>
                                                 <label htmlFor="message"></label>
                                             </div>
                                         </div>
