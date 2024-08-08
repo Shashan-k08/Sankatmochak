@@ -1,5 +1,7 @@
 import './index.css'
 import './App.css';
+// eslint-disable-next-line
+import WOW from 'wowjs';
 import Homepage from './pages/Homepage';
 import {
   BrowserRouter as Router,
@@ -17,7 +19,6 @@ import Earthmore from './components/earthquake/Earthmore';
 import Earthquake from './components/earthquake/Earthquake';
 import Workshop from './components/workshop/Workshop';
 import VolunteerInfo from './components/volunteer/VolunteerInfo';
-import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Services from './pages/Services';
 import Testimonial from './pages/Testimonial';
@@ -42,7 +43,6 @@ function App() {
     <div className="homecl fl-c">
       <Router>
       <Alert alert={alert} />
-      <Header/>
       <Navbar  showalert={showalert} />
         <Routes>
           <Route path='/' element={<Homepage showalert={showalert} />} />

@@ -1,7 +1,4 @@
 import React from 'react'
-import Footer from '../Footer'
-import Header from '../Header'
-import Navbar from '../Navbar'
 import Marquee from "react-fast-marquee";
 import './Workshop.css'
 const Workshop = (props) => {

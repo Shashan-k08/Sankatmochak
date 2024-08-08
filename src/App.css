@@ -83,11 +83,24 @@
   position: relative;
   margin-right: 25px;
   padding: 35px 0;
-  color: #FFFFFF !important;
+  color: black !important;
   font-size: 18px;
   font-weight: 600;
   outline: none;
   transition: .5s;
+}
+.header.active {
+  height: 12vh;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.75);
+  transition: 0.5s;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: white;
+  /* glass blur using backdrop-filter */
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
@@ -95,8 +108,8 @@
   color: var(--dark) !important;
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
+ .navbar-nav .nav-link:hover,
+ .navbar-nav .nav-link.active {
   color: var(--primary) !important;
 }
 
@@ -155,7 +168,7 @@
       content: "";
       width: 0;
       height: 2px;
-      bottom: -1px;
+      bottom: 28px;
       left: 50%;
       background: var(--primary);
       transition: .5s;
@@ -177,9 +190,9 @@
 .hero-header {
   background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url('./img//background1.jpg');
   background-position: center center;
-  /* background-image: url(./img/background1.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 100px;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {

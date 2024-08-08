@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../Footer';
-import Header from '../Header';
-import Navbar from '../Navbar';
 import './Earthquake.css'
 import { Card, Container, Row, Col } from "react-bootstrap";
 
 
 function Earthquake() {
     const [data, setData] = useState([]);
-    const [currentPosition, setCurrentPosition] = useState(null);
     useEffect(() => {
 
         fetch(`https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-07-01&endtime=2023-05-01&minmagnitude=4&latitude=28.6&longitude=77.2&maxradiuskm=300`)
@@ -16,22 +13,6 @@ function Earthquake() {
         .then(data => setData(data.features))
         .then((data) => console.log(data))
         .catch(error => console.log(error));
-        // navigator.geolocation.getCurrentPosition(
-        //     (position) => {
-        //         setCurrentPosition(position);
-        //         console.log(position)
-
-        //         fetch(`https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2021-01-01&endtime=2023-05-01&minmagnitude=4&latitude=${currentPosition.coords.latitude}&longitude=${currentPosition.coords.longitude}&maxradiuskm=300`)
-        //             .then(response => response.json())
-        //             .then(data => setData(data.features))
-        //             .then((data) => console.log(data))
-        //             .catch(error => console.log(error));
-        //     },
-        //     (error) => {
-              
-        //         console.log(error);
-        //     }
-        // );
 
 
     }, []);

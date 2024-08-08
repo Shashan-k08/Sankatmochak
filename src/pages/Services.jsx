@@ -11,36 +11,36 @@ const Services = (props) => {
         const wow = new WOW.WOW();
         wow.init();
       }, []);
-    const movechat = () => {
-        if (localStorage.getItem('token'))
-            navigate('/chat')
-        else {
-            props.showalert("ACESS:Denied - Login Required", "danger")
-        }
-    }
+    // const movechat = () => {
+    //     if (localStorage.getItem('token'))
+    //         navigate('/chat')
+    //     else {
+    //         props.showalert("ACESS:Denied - Login Required", "danger")
+    //     }
+    // }
 
-    const moveshop = () => {
-        if (localStorage.getItem('token'))
-            navigate("/members/workshop")
-        else {
-            props.showalert("ACESS:Denied - Login Required", "danger")
-        }
-    }
-    const moveinfo = () => {
-        if (localStorage.getItem('token'))
-            navigate("/info/message")
-        else {
-            props.showalert("ACESS:Denied - Login Required", "danger")
-        }
-    }
+    // const moveshop = () => {
+    //     if (localStorage.getItem('token'))
+    //         navigate("/members/workshop")
+    //     else {
+    //         props.showalert("ACESS:Denied - Login Required", "danger")
+    //     }
+    // }
+    // const moveinfo = () => {
+    //     if (localStorage.getItem('token'))
+    //         navigate("/info/message")
+    //     else {
+    //         props.showalert("ACESS:Denied - Login Required", "danger")
+    //     }
+    // }
 
-    const moveearth = () => {
-        if (localStorage.getItem('token'))
-            navigate("/info/earthquake")
-        else {
-            props.showalert("ACESS:Denied - Login Required", "danger")
-        }
-    }
+    // const moveearth = () => {
+    //     if (localStorage.getItem('token'))
+    //         navigate("/info/earthquake")
+    //     else {
+    //         props.showalert("ACESS:Denied - Login Required", "danger")
+    //     }
+    // }
 
     return (
         <>
@@ -62,7 +62,7 @@ const Services = (props) => {
                             </a>
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.3s">
-                            <div className="service-item rounded pt-3" onClick={moveearth}>
+                            <div className="service-item rounded pt-3" >
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-hotel text-primary mb-4"></i>
                                     <h5> Status of Red Zone Regions</h5>
@@ -81,7 +81,7 @@ const Services = (props) => {
                             </a>
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.7s">
-                            <div className="service-item rounded pt-3" onClick={moveinfo}>
+                            <div className="service-item rounded pt-3" >
                                 <div className="p-4">
                                     <i className="fa fa-3x fa-cog text-primary mb-4"></i>
                                     <h5>Sankatmochak Khoya-Paya Segment</h5>
@@ -91,7 +91,7 @@ const Services = (props) => {
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.1s">
                             <div className="service-item rounded pt-3">
-                                <div className="p-4" onClick={movechat}>
+                                <div className="p-4" >
                                     <i className="fa fa-3x fa-globe text-primary mb-4"></i>
                                     <h5>Interaction area</h5>
                                     <p>Chat spport for the memebers through their local Volunteers</p>
@@ -109,7 +109,7 @@ const Services = (props) => {
                         </div>
                         <div className="col-lg-3 col-sm-6 wow fadeInUp pointer" data-wow-delay="0.5s">
                             <div className="service-item rounded pt-3">
-                                <div className="p-4" onClick={moveshop}>
+                                <div className="p-4" >
                                     <i className="fa fa-3x fa-user text-primary mb-4"></i>
                                     <Link  to='/members/workshop'>  <h5>Workshops and trainee calender</h5></Link>
                                     <p>Get the information of the running programs and Wrokshops in your area.</p>

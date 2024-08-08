@@ -25,16 +25,17 @@ const Sos = (props) => {
       
     };
     const handleSendMessage = () => {
-        if (localStorage.getItem('token')) {
+        navigate1('/info-message')
+        // if (localStorage.getItem('token')) {
 
-            navigate1('/info-message')
-            props.showalert("ACESS - Provided ", "success")
-            console.log('Sending SOS:', sos);
-            setSOS('');
-        }
-        else {
-            props.showalert("ACESS:Denied - Login Required", "danger")
-        }
+        //     navigate1('/info-message')
+        //     props.showalert("ACESS - Provided ", "success")
+        //     console.log('Sending SOS:', sos);
+        //     setSOS('');
+        // }
+        // else {
+        //     props.showalert("ACESS:Denied - Login Required", "danger")
+        // }
         // Code to send SOS
 
     };

@@ -1,10 +1,8 @@
 import React from 'react'
-import Footer from '../Footer'
-import Header from '../Header'
-import Navbar from '../Navbar'
 import { useState, useEffect } from 'react';
 import './Info.css'
 const Info = (props) => {
+    // eslint-disable-next-line
     const [currentPosition, setCurrentPosition] = useState(null);
     const [recording, setRecording] = useState(false);
     const [stream, setStream] = useState(null);
