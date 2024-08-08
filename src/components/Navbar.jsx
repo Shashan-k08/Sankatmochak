@@ -14,6 +14,9 @@ const Navbar = (props) => {
   const [showlog, setShowlog] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [isDisasterOpen, setIsDisasterOpen] = useState(false);
+  const [isHealthOpen, setIsHealthOpen] = useState(false);
+  const [isVolunteerOpen, setIsVolunteerOpen] = useState(false);
   const handleLogin = async (e) => {
     e.preventDefault();
     setloading(true);
@@ -69,7 +72,7 @@ const Navbar = (props) => {
   });
   useEffect(() => {
     // DOMContentLoaded event listener
-    console.log("Even fired")
+    console.log("Even fired");
     const handleClick = (event) => {
       const navLinks = document.querySelectorAll(".nav-link");
       navLinks.forEach((link) => link.classList.remove("active"));
@@ -80,9 +83,10 @@ const Navbar = (props) => {
     navLinks.forEach((link) => link.addEventListener("click", handleClick));
 
     return () => {
-      navLinks.forEach((link) => link.removeEventListener("click", handleClick));
+      navLinks.forEach((link) =>
+        link.removeEventListener("click", handleClick)
+      );
     };
-
   }, []);
 
   useEffect(() => {
@@ -90,6 +94,23 @@ const Navbar = (props) => {
     if (abd) setShowlog(true);
     console.log(localStorage.getItem("token"));
   }, []);
+  const toggleDisasterDropdown = () => {
+    setIsDisasterOpen(!isDisasterOpen);
+    setIsHealthOpen(false);
+    setIsVolunteerOpen(false);
+  };
+
+  const toggleHealthDropdown = () => {
+    setIsHealthOpen(!isHealthOpen);
+    setIsDisasterOpen(false);
+    setIsVolunteerOpen(false);
+  };
+
+  const toggleVolunteerDropdown = () => {
+    setIsVolunteerOpen(!isVolunteerOpen);
+    setIsDisasterOpen(false);
+    setIsHealthOpen(false);
+  };
   return (
     <>
       {loading ? (
@@ -195,11 +216,13 @@ const Navbar = (props) => {
                 <Link
                   to="/"
                   className="nav-item nav-link  dropdown-toggle"
-                  data-bs-toggle="dropdown"
+                  onClick={toggleDisasterDropdown}
+                  onMouseEnter={() => setIsDisasterOpen(true)}
+                  onMouseLeave={() => setIsDisasterOpen(false)}
                 >
                   Disaster-Type
                 </Link>
-                <div className="dropdown-menu m-0">
+                <div className={`dropdown-menu ${isDisasterOpen ? "open" : ""}`}>
                   <Link
                     to="/info/earthquake
                   "
@@ -228,11 +251,13 @@ const Navbar = (props) => {
                 <Link
                   to="/"
                   className="nav-item nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
+                  onClick={toggleHealthDropdown}
+                  onMouseEnter={() => setIsHealthOpen(true)}
+                  onMouseLeave={() => setIsHealthOpen(false)}
                 >
                   Health Info
                 </Link>
-                <div className="dropdown-menu m-0">
+                <div  className={`dropdown-menu ${isHealthOpen ? "open" : ""}`}>
                   <a
                     href="https://healthviewport.github.io/bed-tracker/"
                     className="dropdown-item"
@@ -251,11 +276,13 @@ const Navbar = (props) => {
                 <Link
                   to="/"
                   className="nav-item nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
+                  onClick={toggleVolunteerDropdown}
+                  onMouseEnter={() => setIsVolunteerOpen(true)}
+                  onMouseLeave={() => setIsVolunteerOpen(false)}
                 >
                   Volunteer
                 </Link>
-                <div className="dropdown-menu m-0">
+                <div   className={`dropdown-menu ${isVolunteerOpen ? "open" : ""}`}>
                   <Link to="/members/workshop" className="dropdown-item">
                     Training & Programs
                   </Link>

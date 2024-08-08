@@ -102,7 +102,9 @@
   background: white;
   /* glass blur using backdrop-filter */
 }
-
+.dropdown-menu.open {
+  display: block;
+}
 .sticky-top.navbar-light .navbar-nav .nav-link {
   padding: 20px 0;
   color: var(--dark) !important;
@@ -132,8 +134,19 @@
   }
 
   .navbar-light .navbar-collapse {
-      margin-top: 15px;
-      border-top: 1px solid #DDDDDD;
+    position: absolute;
+    display: block;
+    list-style: none;
+    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    left: 0px;
+    padding-left: 29px;
+    padding-top: 48px;
+    top: 0px;
+    transition: 0.5s ease-in-out;
+    width: 60%;
+    height: 100vh;
+    background-color: white;
+    z-index: 888;
   }
 
   .navbar-light .navbar-nav .nav-link,
