@@ -88,6 +88,7 @@
   font-weight: 600;
   outline: none;
   transition: .5s;
+  
 }
 .header.active {
   height: 12vh;
@@ -95,7 +96,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.75);
+ 
   transition: 0.5s;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -169,6 +170,7 @@
       left: 0;
       border-bottom: 1px solid rgba(256, 256, 256, .1);
       z-index: 999;
+      box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.75);
   }
   
   .sticky-top.navbar-light {

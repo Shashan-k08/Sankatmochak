@@ -71,11 +71,11 @@ const Sos = (props) => {
             <div className="sos-send fl-r">
                 <div className="sos-s">
 
-                    <button className='btn-glow' onClick={handleSendSOS}>Send<br /> <b> SOS</b></button>
+                    <button className='btn-glow' onClick={handleSendSOS}>Trigger<br /> <b> SOS</b></button>
                 </div>
                 <div className='sos-m'>
 
-                    <button className='btn-glow2' onClick={handleSendMessage}>Send <br /> <b>MMS</b> </button>
+                    <button className='btn-glow2' onClick={handleSendMessage}>Send <br /> <b>E-SMS</b> </button>
                 </div>
             </div>
             <div className="ambu fl-c">

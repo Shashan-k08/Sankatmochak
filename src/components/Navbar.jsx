@@ -17,6 +17,7 @@ const Navbar = (props) => {
   const [isDisasterOpen, setIsDisasterOpen] = useState(false);
   const [isHealthOpen, setIsHealthOpen] = useState(false);
   const [isVolunteerOpen, setIsVolunteerOpen] = useState(false);
+  const [showNav, setShowNav] = useState(false);
   const handleLogin = async (e) => {
     e.preventDefault();
     setloading(true);
@@ -56,9 +57,10 @@ const Navbar = (props) => {
   };
 
   const handleOn = () => {
-    var dis = document.getElementById("hiide").style;
-    if (dis.display === "none") dis.display = "block";
-    else dis.display = "none";
+    if (window.innerWidth <= 992) {
+      setShowNav(!showNav);
+      console.log("hey");
+    }
   };
 
   const handlelogout = () => {
@@ -204,8 +206,11 @@ const Navbar = (props) => {
           <button className="navbar-toggler " onClick={handleOn} type="button">
             <span className="fa fa-bars"></span>
           </button>
-          <div className=" navbar-collapse show" id="hiide">
-            <div className="navbar-nav ms-auto py-0">
+          <div
+            className=" navbar-collapse show"
+            id={`${showNav ? "" : "hiide"}`}
+          >
+            <div className="navbar-nav ms-auto py-0" onClick={handleOn}>
               <Link to="/" className="nav-item nav-link">
                 Home
               </Link>
@@ -222,7 +227,11 @@ const Navbar = (props) => {
                 >
                   Disaster-Type
                 </Link>
-                <div className={`dropdown-menu ${isDisasterOpen ? "open" : ""}`}>
+                <div
+                  className={`dropdown-menu ${isDisasterOpen ? "open" : ""}`}
+                  onMouseEnter={() => setIsDisasterOpen(true)}
+                  onMouseLeave={() => setIsDisasterOpen(false)}
+                >
                   <Link
                     to="/info/earthquake
                   "
@@ -257,7 +266,11 @@ const Navbar = (props) => {
                 >
                   Health Info
                 </Link>
-                <div  className={`dropdown-menu ${isHealthOpen ? "open" : ""}`}>
+                <div
+                  className={`dropdown-menu ${isHealthOpen ? "open" : ""}`}
+                  onMouseEnter={() => setIsHealthOpen(true)}
+                  onMouseLeave={() => setIsHealthOpen(false)}
+                >
                   <a
                     href="https://healthviewport.github.io/bed-tracker/"
                     className="dropdown-item"
@@ -282,7 +295,11 @@ const Navbar = (props) => {
                 >
                   Volunteer
                 </Link>
-                <div   className={`dropdown-menu ${isVolunteerOpen ? "open" : ""}`}>
+                <div
+                  className={`dropdown-menu ${isVolunteerOpen ? "open" : ""}`}
+                  onMouseEnter={() => setIsVolunteerOpen(true)}
+                  onMouseLeave={() => setIsVolunteerOpen(false)}
+                >
                   <Link to="/members/workshop" className="dropdown-item">
                     Training & Programs
                   </Link>
